@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Training dashboard mark">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b1b1a"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f6f6f4"/>
+      <stop offset="0.55" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d9d9d4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#g)"/>
+
+  <!-- ascending load: four stacked bars, each heavier than the last -->
+  <g fill="url(#bar)">
+    <rect x="96"  y="322" width="52" height="60"  rx="16"/>
+    <rect x="172" y="286" width="52" height="96"  rx="16"/>
+    <rect x="248" y="234" width="52" height="148" rx="16"/>
+    <rect x="324" y="162" width="52" height="220" rx="16"/>
+  </g>
+
+  <!-- the bar itself -->
+  <rect x="72" y="404" width="368" height="22" rx="11" fill="#c4622d"/>
+  <circle cx="96" cy="415" r="21" fill="#f6f6f4"/>
+  <circle cx="416" cy="415" r="21" fill="#f6f6f4"/>
+</svg>

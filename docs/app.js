@@ -8,9 +8,10 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => (
 ));
 const num = (n) => (Math.round(n * 10) / 10).toString();
 
-const CHART_FONT = { family: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif" };
-const AXIS = { color: "#93a1b3", font: { ...CHART_FONT, size: 11 } };
-const GRID = { color: "rgba(255,255,255,0.06)" };
+const CHART_FONT = { family: '"Helvetica Neue", Helvetica, Inter, system-ui, Arial, sans-serif' };
+const AXIS = { color: "#6f6f68", font: { ...CHART_FONT, size: 11 } };
+const GRID = { color: "rgba(17,17,17,0.07)" };
+const INK = "#111111";
 
 /* ---------------- Skip-day excuses (original, written for this page) ------- */
 const EXCUSES = [
@@ -122,9 +123,10 @@ function renderTrends(data) {
         datasets: [{
           label: "Top set (kg)",
           data: pts.map(p => p.top_weight_kg),
-          borderColor: "#ff8a3d",
-          backgroundColor: "rgba(255,138,61,0.14)",
-          tension: 0.25, fill: true, pointRadius: 3, borderWidth: 2,
+          borderColor: INK,
+          backgroundColor: "rgba(17,17,17,0.06)",
+          tension: 0.25, fill: true, pointRadius: 2.5,
+          pointBackgroundColor: "#fff", pointBorderColor: INK, borderWidth: 1.75,
         }],
       },
       options: {
@@ -167,8 +169,8 @@ function renderBattle(data) {
       datasets: [{
         label: "Sets",
         data: vals,
-        backgroundColor: ["#ff8a3d", "#5aa9f7", "#46d18a"],
-        borderRadius: 8,
+        backgroundColor: ["#c4622d", "#3a6ea8", "#2f7d55"],
+        borderRadius: 6, maxBarThickness: 92,
       }],
     },
     options: {
@@ -350,26 +352,137 @@ function renderChangelog(data) {
     : emptyNote("No changelog entries yet.");
 }
 
+/* ---------------- hero + stats -------------------------------------------- */
+function renderHero(data) {
+  const s = section(data, "streak", {}) || {};
+  const vb = section(data, "volume_battle", {}) || {};
+  const prs = section(data, "personal_records", []) || [];
+  const dt = section(data, "day_type", {}) || {};
+  const totalSets = Object.values(section(data, "volume", {}) || {})
+    .reduce((a, b) => a + b, 0);
+
+  $("eyebrow").textContent =
+    `${data.date} · last ${data.lookback_days} days`;
+  $("headline").textContent = dt.inferred
+    ? `${dt.inferred} was your last session`
+    : "Training Dashboard";
+
+  const stats = [
+    { k: "Sessions", v: data.sessions_analyzed, s: `in ${data.lookback_days}d` },
+    { k: "Total sets", v: num(totalSets), s: `in ${data.lookback_days}d` },
+    { k: "Week streak", v: s.current_streak_weeks ?? 0, s: `${s.sessions_per_good_week ?? 3}+/wk` },
+    { k: "Lifetime PRs", v: prs.length, s: "tracked" },
+    { k: "Leading", v: leader(vb.by_day_type), s: "by volume" },
+  ];
+  $("stats").innerHTML = stats.map(x =>
+    `<div class="stat"><div class="k">${esc(x.k)}</div>
+     <div class="v">${esc(x.v)} <small>${esc(x.s)}</small></div></div>`).join("");
+}
+function leader(byDay) {
+  if (!byDay) return "—";
+  const e = Object.entries(byDay);
+  if (!e.length) return "—";
+  return e.reduce((a, b) => (b[1] > a[1] ? b : a))[0];
+}
+
+/* ---------------- recent workouts ----------------------------------------- */
+function relativeDay(iso) {
+  const d = new Date(iso + "T00:00:00");
+  const days = Math.round((Date.now() - d.getTime()) / 86400000);
+  if (days <= 0) return "today";
+  if (days === 1) return "yesterday";
+  if (days < 7) return `${days} days ago`;
+  const w = Math.floor(days / 7);
+  return w === 1 ? "1 week ago" : `${w} weeks ago`;
+}
+
+function renderSessions(data) {
+  const list = section(data, "recent_sessions", []) || [];
+  const box = $("sessions-list");
+  if (!list.length) { box.innerHTML = emptyNote("No sessions in the current window."); return; }
+
+  box.innerHTML = list.map(s => {
+    const chips = (s.exercises || []).map(e => {
+      const load = (e.top_weight_kg != null)
+        ? `<b>${num(e.top_weight_kg)}kg${e.top_reps ? " × " + e.top_reps : ""}</b>`
+        : `<b>${e.sets} sets</b>`;
+      return `<span class="exchip">${esc(e.title)} ${load}</span>`;
+    }).join("");
+    const d = new Date(s.date + "T00:00:00");
+    const nice = d.toLocaleDateString(undefined, { day: "numeric", month: "short" });
+    return `<div class="session">
+      <div class="when">
+        <div class="d">${esc(nice)}</div>
+        <div class="rel">${esc(relativeDay(s.date))}</div>
+      </div>
+      <div class="what">
+        <div class="stitle">${esc(s.title)}
+          ${s.day_type ? `<span class="daytag">${esc(s.day_type)}</span>` : ""}
+          <span class="daytag">${s.exercise_count} exercises</span>
+        </div>
+        <div class="exlist">${chips}</div>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+/* ---------------- offline download ---------------------------------------- */
+async function downloadStandalone(data, standards) {
+  const btn = $("dl-btn");
+  const old = btn.textContent;
+  btn.textContent = "Packaging…";
+  try {
+    const [html, css, js] = await Promise.all([
+      fetch("index.html").then(r => r.text()),
+      fetch("styles.css").then(r => r.text()),
+      fetch("app.js").then(r => r.text()),
+    ]);
+    // Inline CSS + JS, and freeze the data so the copy works with no network.
+    let out = html
+      .replace(/<link rel="stylesheet" href="styles\.css">/, `<style>\n${css}\n</style>`)
+      .replace(/<script src="app\.js" defer><\/script>/,
+        `<script>window.__FROZEN__=${JSON.stringify({ data, standards })};</script>\n`
+        + `<script>\n${js}\n</script>`);
+    const blob = new Blob([out], { type: "text/html" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `training-dashboard-${data.date}.html`;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    btn.textContent = "Downloaded ✓";
+  } catch (e) {
+    btn.textContent = "Download failed";
+  }
+  setTimeout(() => { btn.textContent = old; }, 2500);
+}
+
 /* ---------------- boot ---------------------------------------------------- */
 async function boot() {
   let data, standards;
-  try {
-    const [d, s] = await Promise.all([
-      fetch("data.json?t=" + Date.now()).then(r => r.json()),
-      fetch("standards.json").then(r => r.json()).catch(() => null),
-    ]);
-    data = d; standards = s;
-  } catch (e) {
-    $("meta").textContent = "Could not load data.json.";
-    return;
+  if (window.__FROZEN__) {
+    // Running from a downloaded standalone copy - no network needed.
+    ({ data, standards } = window.__FROZEN__);
+  } else {
+    try {
+      const [d, s] = await Promise.all([
+        fetch("data.json?t=" + Date.now()).then(r => r.json()),
+        fetch("standards.json").then(r => r.json()).catch(() => null),
+      ]);
+      data = d; standards = s;
+    } catch (e) {
+      $("eyebrow").textContent = "Error";
+      $("headline").textContent = "Could not load data.json";
+      return;
+    }
   }
 
-  $("meta").textContent =
-    `${data.sessions_analyzed} sessions in the last ${data.lookback_days} days · `
-    + `generated ${new Date(data.generated_at).toLocaleString()}`;
+  $("ctx").textContent =
+    `${data.sessions_analyzed} sessions · updated ${new Date(data.generated_at).toLocaleDateString()}`;
   $("hist-days").textContent = data.history_days ?? 90;
   $("lookback-days").textContent = data.lookback_days ?? 28;
 
+  renderHero(data);
+  renderSessions(data);
   renderToday(data);
   renderStreak(data);
   renderResearch(data);
@@ -392,12 +505,34 @@ async function boot() {
   // PR toggle
   document.querySelectorAll("[data-pr]").forEach(btn => {
     btn.addEventListener("click", () => {
-      document.querySelectorAll("[data-pr]").forEach(b => b.classList.remove("toggle-active"));
-      btn.classList.add("toggle-active");
+      document.querySelectorAll("[data-pr]").forEach(b => b.classList.add("btn-ghost"));
+      btn.classList.remove("btn-ghost");
       PR_MODE = btn.dataset.pr;
       renderPRs(data);
     });
   });
+
+  // one-button offline download
+  const dl = $("dl-btn");
+  if (dl) dl.addEventListener("click", () => downloadStandalone(data, standards));
+
+  // nav highlight
+  const secs = [...document.querySelectorAll("main section[id]")];
+  const links = [...document.querySelectorAll(".navtabs a")];
+  if ("IntersectionObserver" in window && secs.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        links.forEach(l => l.classList.toggle("active", l.getAttribute("href") === "#" + en.target.id));
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    secs.forEach(s => io.observe(s));
+  }
+
+  // installable on phone (ignored when opened as a local file)
+  if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+    navigator.serviceWorker.register("sw.js").catch(() => {});
+  }
 
   // excuses
   let last = -1;
