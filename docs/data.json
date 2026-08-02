@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-02T18:19:41Z",
+  "generated_at": "2026-08-02T18:29:46Z",
   "date": "2026-08-02",
   "lookback_days": 28,
   "history_days": 90,
@@ -2173,8 +2173,11 @@
       }
     ],
     "day_type": {
-      "inferred": null,
-      "soundtrack": null
+      "inferred": "Pull",
+      "soundtrack": {
+        "album": "My Beautiful Dark Twisted Fantasy",
+        "artist": "Kanye West"
+      }
     },
     "volume_battle": {
       "by_day_type": {
