@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-02T15:58:30Z",
+  "generated_at": "2026-08-02T18:19:41Z",
   "date": "2026-08-02",
   "lookback_days": 28,
   "history_days": 90,
-  "sessions_analyzed": 13,
+  "sessions_analyzed": 14,
   "sections": {
     "suggestions": [
       {
@@ -13,12 +13,14 @@
         "is_compound": false,
         "zone": "accessory target RPE 7-9",
         "last_date": "2026-07-28",
-        "current_weight_kg": 86.18265279277155,
+        "current_weight_kg": 86.18,
         "current_reps": 6,
         "current_rpe": null,
+        "increment_kg": 3.34,
+        "increment_source": "history",
         "type": "note",
         "proposed_weight_kg": null,
-        "detail": "Trending up (2026-07-16: 82.5kg x6 -> 2026-07-28: 86.18265279277155kg x6). No RPE logged - log RPE next time for a sharper suggestion."
+        "detail": "Trending up (2026-07-16: 82.5kg x6 -> 2026-07-28: 86.18kg x6). No RPE logged - log RPE next time for a sharper suggestion."
       },
       {
         "exercise": "Chest Fly (Machine)",
@@ -29,6 +31,8 @@
         "current_weight_kg": 75,
         "current_reps": 10,
         "current_rpe": null,
+        "increment_kg": 2.5,
+        "increment_source": "category-default",
         "type": "note",
         "proposed_weight_kg": null,
         "detail": "Trending up (2026-07-12: 60kg x10 -> 2026-07-16: 75kg x10). No RPE logged - log RPE next time for a sharper suggestion."
@@ -42,6 +46,8 @@
         "current_weight_kg": 60,
         "current_reps": 15,
         "current_rpe": null,
+        "increment_kg": 2.75,
+        "increment_source": "history",
         "type": "note",
         "proposed_weight_kg": null,
         "detail": "Trending up (2026-07-12: 35kg x15 -> 2026-07-17: 60kg x15). No RPE logged - log RPE next time for a sharper suggestion."
@@ -55,6 +61,8 @@
         "current_weight_kg": 100,
         "current_reps": 6,
         "current_rpe": null,
+        "increment_kg": 5.0,
+        "increment_source": "category-default",
         "type": "note",
         "proposed_weight_kg": null,
         "detail": "Trending up (2026-07-14: 100kg x5 -> 2026-07-29: 100kg x6). No RPE logged - log RPE next time for a sharper suggestion."
@@ -68,6 +76,8 @@
         "current_weight_kg": 22.5,
         "current_reps": 7,
         "current_rpe": null,
+        "increment_kg": 2,
+        "increment_source": "history",
         "type": "note",
         "proposed_weight_kg": null,
         "detail": "Trending up (2026-07-28: 22.5kg x3 -> 2026-08-01: 22.5kg x7). No RPE logged - log RPE next time for a sharper suggestion."
@@ -78,12 +88,14 @@
         "is_compound": false,
         "zone": "accessory target RPE 7-9",
         "last_date": "2026-07-31",
-        "current_weight_kg": 49.895220037920375,
+        "current_weight_kg": 49.9,
         "current_reps": 10,
         "current_rpe": null,
+        "increment_kg": 5.1,
+        "increment_source": "history",
         "type": "note",
         "proposed_weight_kg": null,
-        "detail": "Trending up (2026-07-27: 49.895220037920375kg x8 -> 2026-07-31: 49.895220037920375kg x10). No RPE logged - log RPE next time for a sharper suggestion."
+        "detail": "Trending up (2026-07-27: 49.9kg x8 -> 2026-07-31: 49.9kg x10). No RPE logged - log RPE next time for a sharper suggestion."
       },
       {
         "exercise": "Triceps Rope Pushdown",
@@ -94,18 +106,853 @@
         "current_weight_kg": 32,
         "current_reps": 10,
         "current_rpe": null,
+        "increment_kg": 5.0,
+        "increment_source": "history",
         "type": "note",
         "proposed_weight_kg": null,
         "detail": "Trending up (2026-07-27: 30kg x8 -> 2026-07-31: 32kg x10). No RPE logged - log RPE next time for a sharper suggestion."
       }
     ],
+    "recent_sessions": [
+      {
+        "date": "2026-08-02",
+        "title": "Evening workout \ud83c\udfcb\ufe0f",
+        "day_type": null,
+        "exercise_count": 1,
+        "exercises": [
+          {
+            "title": "tennis",
+            "sets": 1,
+            "top_weight_kg": null,
+            "top_reps": null
+          }
+        ]
+      },
+      {
+        "date": "2026-08-01",
+        "title": "TODAY WE RUN",
+        "day_type": "Pull",
+        "exercise_count": 5,
+        "exercises": [
+          {
+            "title": "Seated Incline Curl (Dumbbell)",
+            "sets": 6,
+            "top_weight_kg": 22.5,
+            "top_reps": 7
+          },
+          {
+            "title": "Reverse Curl (Barbell)",
+            "sets": 3,
+            "top_weight_kg": 25,
+            "top_reps": 10
+          },
+          {
+            "title": "Pull Up",
+            "sets": 2,
+            "top_weight_kg": null,
+            "top_reps": null
+          },
+          {
+            "title": "Treadmill",
+            "sets": 1,
+            "top_weight_kg": null,
+            "top_reps": null
+          },
+          {
+            "title": "Decline Crunch",
+            "sets": 3,
+            "top_weight_kg": null,
+            "top_reps": null
+          }
+        ]
+      },
+      {
+        "date": "2026-07-31",
+        "title": "PUSH CLAUDE",
+        "day_type": "Push",
+        "exercise_count": 5,
+        "exercises": [
+          {
+            "title": "Bench Press (Barbell)",
+            "sets": 7,
+            "top_weight_kg": 110,
+            "top_reps": 4
+          },
+          {
+            "title": "Incline Bench Press (Dumbbell)",
+            "sets": 6,
+            "top_weight_kg": 45,
+            "top_reps": 5
+          },
+          {
+            "title": "Butterfly (Pec Deck)",
+            "sets": 2,
+            "top_weight_kg": 49.9,
+            "top_reps": 10
+          },
+          {
+            "title": "Single Arm Lateral Raise (Cable)",
+            "sets": 6,
+            "top_weight_kg": 7.5,
+            "top_reps": 10
+          },
+          {
+            "title": "Triceps Rope Pushdown",
+            "sets": 4,
+            "top_weight_kg": 32,
+            "top_reps": 10
+          }
+        ]
+      },
+      {
+        "date": "2026-07-29",
+        "title": "LEGS CLAUDE",
+        "day_type": "Legs",
+        "exercise_count": 3,
+        "exercises": [
+          {
+            "title": "Squat (Barbell)",
+            "sets": 4,
+            "top_weight_kg": 90,
+            "top_reps": 6
+          },
+          {
+            "title": "Romanian Deadlift (Barbell)",
+            "sets": 3,
+            "top_weight_kg": 100,
+            "top_reps": 6
+          },
+          {
+            "title": "Leg Extension (Machine)",
+            "sets": 4,
+            "top_weight_kg": 104.33,
+            "top_reps": 8
+          }
+        ]
+      },
+      {
+        "date": "2026-07-28",
+        "title": "PULL CLAUDE",
+        "day_type": "Pull",
+        "exercise_count": 7,
+        "exercises": [
+          {
+            "title": "Lat Pulldown (Cable)",
+            "sets": 6,
+            "top_weight_kg": 86.18,
+            "top_reps": 6
+          },
+          {
+            "title": "Pull Up (Weighted)",
+            "sets": 3,
+            "top_weight_kg": 5,
+            "top_reps": 8
+          },
+          {
+            "title": "T Bar Row",
+            "sets": 5,
+            "top_weight_kg": 65,
+            "top_reps": 4
+          },
+          {
+            "title": "Seated Cable Row - V Grip (Cable)",
+            "sets": 3,
+            "top_weight_kg": 65,
+            "top_reps": 10
+          },
+          {
+            "title": "Seated Incline Curl (Dumbbell)",
+            "sets": 6,
+            "top_weight_kg": 22.5,
+            "top_reps": 3
+          },
+          {
+            "title": "Hammer Curl (Dumbbell)",
+            "sets": 2,
+            "top_weight_kg": 15,
+            "top_reps": 8
+          },
+          {
+            "title": "Pull Up",
+            "sets": 1,
+            "top_weight_kg": null,
+            "top_reps": null
+          }
+        ]
+      },
+      {
+        "date": "2026-07-27",
+        "title": "PUSH CLAUDE",
+        "day_type": "Push",
+        "exercise_count": 5,
+        "exercises": [
+          {
+            "title": "Bench Press (Barbell)",
+            "sets": 7,
+            "top_weight_kg": 110,
+            "top_reps": 5
+          },
+          {
+            "title": "Incline Bench Press (Dumbbell)",
+            "sets": 6,
+            "top_weight_kg": 45,
+            "top_reps": 6
+          },
+          {
+            "title": "Butterfly (Pec Deck)",
+            "sets": 3,
+            "top_weight_kg": 49.9,
+            "top_reps": 8
+          },
+          {
+            "title": "Single Arm Lateral Raise (Cable)",
+            "sets": 6,
+            "top_weight_kg": 7.5,
+            "top_reps": 10
+          },
+          {
+            "title": "Triceps Rope Pushdown",
+            "sets": 3,
+            "top_weight_kg": 30,
+            "top_reps": 8
+          }
+        ]
+      },
+      {
+        "date": "2026-07-25",
+        "title": "Afternoon workout \ud83d\udcaa",
+        "day_type": null,
+        "exercise_count": 1,
+        "exercises": [
+          {
+            "title": "Swimming",
+            "sets": 1,
+            "top_weight_kg": null,
+            "top_reps": null
+          }
+        ]
+      },
+      {
+        "date": "2026-07-23",
+        "title": "Evening workout \ud83c\udfcb\ufe0f",
+        "day_type": null,
+        "exercise_count": 1,
+        "exercises": [
+          {
+            "title": "Swimming",
+            "sets": 1,
+            "top_weight_kg": null,
+            "top_reps": null
+          }
+        ]
+      }
+    ],
+    "increments": {
+      "Lat Pulldown (Cable)": {
+        "increment_kg": 3.34,
+        "source": "history",
+        "changes_used": 22,
+        "category_default_kg": 2.5
+      },
+      "Iso-Lateral Row (Machine)": {
+        "increment_kg": 5,
+        "source": "history",
+        "changes_used": 19,
+        "category_default_kg": 2.5
+      },
+      "Reverse Fly Single Arm (Cable)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 2,
+        "category_default_kg": 2.5
+      },
+      "Seated Cable Row - V Grip (Cable)": {
+        "increment_kg": 5,
+        "source": "history",
+        "changes_used": 9,
+        "category_default_kg": 2.5
+      },
+      "Seated Incline Curl (Dumbbell)": {
+        "increment_kg": 2,
+        "source": "history",
+        "changes_used": 15,
+        "category_default_kg": 2.0
+      },
+      "Bicep Curl (Cable)": {
+        "increment_kg": 5.0,
+        "source": "history",
+        "changes_used": 6,
+        "category_default_kg": 2.0
+      },
+      "Reverse Curl (Cable)": {
+        "increment_kg": 5.0,
+        "source": "history",
+        "changes_used": 10,
+        "category_default_kg": 2.0
+      },
+      "Cable Crunch": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Incline Bench Press (Dumbbell)": {
+        "increment_kg": 3.0,
+        "source": "history",
+        "changes_used": 10,
+        "category_default_kg": 2.5
+      },
+      "Straight Arm Lat Pulldown (Cable)": {
+        "increment_kg": 2.5,
+        "source": "history",
+        "changes_used": 5,
+        "category_default_kg": 2.5
+      },
+      "Bench Press (Barbell)": {
+        "increment_kg": 5.0,
+        "source": "history",
+        "changes_used": 20,
+        "category_default_kg": 2.5
+      },
+      "Pull Up": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Decline Crunch (Weighted)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.5
+      },
+      "Back Extension (Weighted Hyperextension)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Behind the Back Curl (Cable)": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.0
+      },
+      "Cable Fly Crossovers": {
+        "increment_kg": 2.5,
+        "source": "history",
+        "changes_used": 6,
+        "category_default_kg": 2.5
+      },
+      "Single Arm Lateral Raise (Cable)": {
+        "increment_kg": 2.5,
+        "source": "history",
+        "changes_used": 17,
+        "category_default_kg": 2.5
+      },
+      "Triceps Rope Pushdown": {
+        "increment_kg": 5.0,
+        "source": "history",
+        "changes_used": 12,
+        "category_default_kg": 2.0
+      },
+      "Overhead Triceps Extension (Cable)": {
+        "increment_kg": 5.0,
+        "source": "history",
+        "changes_used": 12,
+        "category_default_kg": 2.0
+      },
+      "Shoulder Press (Dumbbell)": {
+        "increment_kg": 2.0,
+        "source": "history",
+        "changes_used": 10,
+        "category_default_kg": 2.5
+      },
+      "Squat Completo": {
+        "increment_kg": 5.0,
+        "source": "category-default",
+        "changes_used": 2,
+        "category_default_kg": 5.0
+      },
+      "Stacco da Terra Rumeno (Bilanciere)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 2,
+        "category_default_kg": 2.5
+      },
+      "Leg Extension (Macchina)": {
+        "increment_kg": 5.0,
+        "source": "category-default",
+        "changes_used": 2,
+        "category_default_kg": 5.0
+      },
+      "Leg Curl in Piedi": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.0
+      },
+      "Adduzione Anche (Macchina)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Calf Press (Macchina)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.5
+      },
+      "Lat Pulldown (Cavo)": {
+        "increment_kg": 5,
+        "source": "history",
+        "changes_used": 3,
+        "category_default_kg": 2.5
+      },
+      "Rematore Convergente (Macchina)": {
+        "increment_kg": 5,
+        "source": "history",
+        "changes_used": 5,
+        "category_default_kg": 2.5
+      },
+      "Crunch Declinato (Con Peso Aggiunto)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Estensione Dorso (Ipertensione con Peso)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.5
+      },
+      "Curl Bicipiti Inclinato da Seduto (Manubrio)": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.0
+      },
+      "Pushdown Tricipiti con Corda": {
+        "increment_kg": 4,
+        "source": "history",
+        "changes_used": 5,
+        "category_default_kg": 2.0
+      },
+      "Croci Inverse Deltoide Posteriore (Macchina)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.5
+      },
+      "Curl Bicipiti (Cavo)": {
+        "increment_kg": 2.5,
+        "source": "history",
+        "changes_used": 3,
+        "category_default_kg": 2.0
+      },
+      "Curl Inverso (Bilanciere)": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.0
+      },
+      "Panca Inclinata (Manubrio)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.5
+      },
+      "Panca Piana (Bilanciere)": {
+        "increment_kg": 2.5,
+        "source": "history",
+        "changes_used": 3,
+        "category_default_kg": 2.5
+      },
+      "Croci ai Cavi": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.5
+      },
+      "Lento in Avanti (Manubrio)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 2,
+        "category_default_kg": 2.5
+      },
+      "Bicipiti Martello Incrociato": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Curl Bicipiti con Corda": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.0
+      },
+      "Croci Inverse Braccio Singolo (Cavo)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Leg Press (Macchina)": {
+        "increment_kg": 5.0,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 5.0
+      },
+      "Russian Twist (Con Peso Aggiunto)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Farfalla (Pec Deck)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.5
+      },
+      "Trazione (Con Peso Aggiunto)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Preacher Curl (Bilanciere)": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.0
+      },
+      "Curl Bicipiti con EZ Bar": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 2,
+        "category_default_kg": 2.0
+      },
+      "Pushdown Tricipiti": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 2,
+        "category_default_kg": 2.0
+      },
+      "Hammers in panca incine": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Curl Invertito (Manubrio)": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.0
+      },
+      "Aperture Laterali (Macchina)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Lento in Avanti Seduto (Macchina)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Landmine Row": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Preacher Curl (Manubrio)": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.0
+      },
+      "Triceps Kickback (Cable)": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.0
+      },
+      "Leg Extensions Gamba Singola": {
+        "increment_kg": 5.0,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 5.0
+      },
+      "Rear Kick (Machine)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.5
+      },
+      "Shoulder Press (Machine Plates)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.5
+      },
+      "Lat Pulldown Braccia Dritte (Cavo)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Stacco da Terra (Bilanciere)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Crunch (Macchina)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Hack Squat (Macchina)": {
+        "increment_kg": 5.0,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 5.0
+      },
+      "Leg Curl Seduto (Macchina)": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.0
+      },
+      "EZ Bar Biceps Curl": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 2,
+        "category_default_kg": 2.0
+      },
+      "Triceps Pushdown": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.0
+      },
+      "Chest Press (Machine)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Rear Delt Reverse Fly (Machine)": {
+        "increment_kg": 2.5,
+        "source": "history",
+        "changes_used": 11,
+        "category_default_kg": 2.5
+      },
+      "Hack Squat (Machine)": {
+        "increment_kg": 5.0,
+        "source": "history",
+        "changes_used": 9,
+        "category_default_kg": 5.0
+      },
+      "Deadlift (Smith Machine)": {
+        "increment_kg": 5.0,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 5.0
+      },
+      "Leg Extension (Machine)": {
+        "increment_kg": 5,
+        "source": "history",
+        "changes_used": 9,
+        "category_default_kg": 5.0
+      },
+      "Standing Leg Curls": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.0
+      },
+      "Hip Adduction (Machine)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Crunch (Machine)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Butterfly (Pec Deck)": {
+        "increment_kg": 5.1,
+        "source": "history",
+        "changes_used": 13,
+        "category_default_kg": 2.5
+      },
+      "Lat Pulldown (Machine)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.5
+      },
+      "T Bar Row": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Squat (Barbell)": {
+        "increment_kg": 10,
+        "source": "history",
+        "changes_used": 3,
+        "category_default_kg": 5.0
+      },
+      "Seated Leg Curl (Machine)": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.0
+      },
+      "Calf Press (Machine)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Full Squat": {
+        "increment_kg": 5.0,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 5.0
+      },
+      "Hip Thrust (Machine)": {
+        "increment_kg": 5.0,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 5.0
+      },
+      "Leg Press (Machine)": {
+        "increment_kg": 17.5,
+        "source": "history",
+        "changes_used": 8,
+        "category_default_kg": 5.0
+      },
+      "Seated Calf Raise": {
+        "increment_kg": 20,
+        "source": "history",
+        "changes_used": 3,
+        "category_default_kg": 2.5
+      },
+      "Preacher Curl (Barbell)": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.0
+      },
+      "Reverse Curl (Barbell)": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.0
+      },
+      "Romanian Deadlift (Barbell)": {
+        "increment_kg": 5.0,
+        "source": "category-default",
+        "changes_used": 2,
+        "category_default_kg": 5.0
+      },
+      "Lying Leg Curl (Machine)": {
+        "increment_kg": 2.5,
+        "source": "history",
+        "changes_used": 5,
+        "category_default_kg": 2.0
+      },
+      "Seated Cable Row - Bar Wide Grip": {
+        "increment_kg": 2.5,
+        "source": "history",
+        "changes_used": 9,
+        "category_default_kg": 2.5
+      },
+      "Hammer Curl (Cable)": {
+        "increment_kg": 2.5,
+        "source": "history",
+        "changes_used": 4,
+        "category_default_kg": 2.0
+      },
+      "Lateral Raise (Dumbbell)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.5
+      },
+      "Triceps Pressdown": {
+        "increment_kg": 2.75,
+        "source": "history",
+        "changes_used": 8,
+        "category_default_kg": 2.0
+      },
+      "Hammer Curl (Dumbbell)": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.0
+      },
+      "Pull Up (Weighted)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.5
+      },
+      "MULTI FLIGHT TECHNOGYM": {
+        "increment_kg": 5,
+        "source": "history",
+        "changes_used": 5,
+        "category_default_kg": 2.5
+      },
+      "Multitech Front": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.5
+      },
+      "Chest Fly (Machine)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 1,
+        "category_default_kg": 2.5
+      },
+      "Single Arm Cable Row": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      },
+      "Bicep Curl (Dumbbell)": {
+        "increment_kg": 2.0,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.0
+      },
+      "Walking Lunge (Dumbbell)": {
+        "increment_kg": 2.5,
+        "source": "category-default",
+        "changes_used": 0,
+        "category_default_kg": 2.5
+      }
+    },
     "rest": {
       "flag": null
     },
-    "stretches": [
-      "Wall bicep stretch (arm extended, palm on wall, rotate away)",
-      "Hanging lat stretch or child's pose reach, 2-3x30s"
-    ],
+    "stretches": [],
     "volume": {
       "chest": 49,
       "back": 34,
@@ -114,7 +961,7 @@
       "triceps": 14,
       "quads": 13,
       "hamstrings": 7,
-      "other": 11
+      "other": 12
     },
     "compound_history": {
       "Bench Press (Barbell)": [
@@ -356,7 +1203,7 @@
     "streak": {
       "current_streak_weeks": 2,
       "sessions_per_good_week": 3,
-      "current_week_sessions": 5,
+      "current_week_sessions": 6,
       "weeks": [
         {
           "year": 2026,
@@ -427,7 +1274,7 @@
         {
           "year": 2026,
           "week": 31,
-          "sessions": 5,
+          "sessions": 6,
           "good": true
         }
       ]
@@ -446,7 +1293,7 @@
         "exercise": "Calf Press (Machine)",
         "category": "other",
         "is_compound": false,
-        "weight_kg": 140.6138019250483,
+        "weight_kg": 140.61,
         "reps": 15,
         "est_1rm_kg": 210.9,
         "date": "2026-01-03"
@@ -518,9 +1365,9 @@
         "exercise": "Leg Extension (Machine)",
         "category": "quads",
         "is_compound": false,
-        "weight_kg": 104.32636917019714,
+        "weight_kg": 104.33,
         "reps": 8,
-        "est_1rm_kg": 132.1,
+        "est_1rm_kg": 132.2,
         "date": "2026-07-29"
       },
       {
@@ -725,7 +1572,7 @@
         "exercise": "Seated Leg Curl (Machine)",
         "category": "biceps",
         "is_compound": false,
-        "weight_kg": 58.96707822663317,
+        "weight_kg": 58.97,
         "reps": 8,
         "est_1rm_kg": 74.7,
         "date": "2026-01-03"
@@ -1326,11 +2173,8 @@
       }
     ],
     "day_type": {
-      "inferred": "Pull",
-      "soundtrack": {
-        "album": "My Beautiful Dark Twisted Fantasy",
-        "artist": "Kanye West"
-      }
+      "inferred": null,
+      "soundtrack": null
     },
     "volume_battle": {
       "by_day_type": {
