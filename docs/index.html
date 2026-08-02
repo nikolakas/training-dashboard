@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Training Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🏋️</text></svg>">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+
+<header class="page-head">
+  <div class="wrap">
+    <h1>Training Dashboard</h1>
+    <p class="sub" id="meta">Loading…</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- TODAY -->
+  <section class="card" id="today">
+    <h2>Today</h2>
+    <div id="rest-flag"></div>
+    <h3>Progression suggestions</h3>
+    <div id="suggestions" class="stack"></div>
+    <h3>Stretching</h3>
+    <ul id="stretches" class="bullets"></ul>
+  </section>
+
+  <!-- STREAK -->
+  <section class="card" id="streak-card">
+    <h2>Streak</h2>
+    <div class="streak-row">
+      <div class="flame-wrap"><span id="flame" class="flame">🔥</span></div>
+      <div>
+        <div class="streak-num" id="streak-num">–</div>
+        <div class="muted" id="streak-note"></div>
+      </div>
+    </div>
+    <div id="streak-weeks" class="weekbar"></div>
+  </section>
+
+  <!-- LATEST RESEARCH -->
+  <section class="card" id="research-card">
+    <h2>Latest Research</h2>
+    <p class="muted small">From the <strong>Weekly Findings</strong> Notion database. Pulled locally at export time.</p>
+    <div id="research" class="stack"></div>
+  </section>
+
+  <!-- TRENDS -->
+  <section class="card">
+    <h2>Trends</h2>
+    <p class="muted small">Heaviest set per session over the last <span id="hist-days">90</span> days.</p>
+    <div id="charts" class="chart-grid"></div>
+  </section>
+
+  <!-- VOLUME BATTLE -->
+  <section class="card">
+    <h2>Push vs Pull vs Legs</h2>
+    <p class="muted small">Total sets over the last <span id="lookback-days">28</span> days, grouped by day type.</p>
+    <div class="chart-box"><canvas id="battle-chart"></canvas></div>
+    <p id="battle-commentary" class="commentary"></p>
+  </section>
+
+  <!-- WHERE I STAND -->
+  <section class="card" id="stand-card">
+    <h2>Where I Stand</h2>
+    <p class="muted small">
+      Your best estimated 1RM (Epley) vs published strength standards.
+      Enter your bodyweight — it is stored only in this browser and never uploaded.
+    </p>
+    <div class="bw-row">
+      <label for="bw">Bodyweight (kg)</label>
+      <input type="number" id="bw" min="40" max="140" step="0.5" placeholder="e.g. 75">
+      <button id="bw-save" class="btn">Update</button>
+    </div>
+    <div id="standings" class="stack"></div>
+    <p class="muted small" id="standards-credit"></p>
+  </section>
+
+  <!-- PR HALL OF FAME -->
+  <section class="card">
+    <h2>PR Hall of Fame</h2>
+    <p class="muted small">All-time best set per lift across your full Hevy history, ranked by estimated 1RM.</p>
+    <div class="pr-controls">
+      <button class="btn btn-sm toggle-active" data-pr="compound">Compounds</button>
+      <button class="btn btn-sm" data-pr="all">All lifts</button>
+    </div>
+    <div id="prs" class="pr-wall"></div>
+  </section>
+
+  <!-- SOUNDTRACK -->
+  <section class="card" id="soundtrack-card">
+    <h2>Today's Soundtrack</h2>
+    <div id="soundtrack" class="sound-row"></div>
+  </section>
+
+  <!-- EXCUSE GENERATOR -->
+  <section class="card">
+    <h2>Skip-Day Excuse Generator</h2>
+    <p class="muted small">Purely decorative. Affects nothing. Judges nothing.</p>
+    <button id="excuse-btn" class="btn">Generate an excuse</button>
+    <p id="excuse" class="excuse"></p>
+  </section>
+
+  <!-- CHANGELOG -->
+  <section class="card">
+    <h2>Changelog</h2>
+    <ol id="changelog" class="timeline"></ol>
+  </section>
+
+</main>
+
+<footer class="wrap foot">
+  <p class="muted small">
+    Generated locally by <code>hevy_coach.py</code>. No API keys are present in this site or in
+    <code>data.json</code>; all Hevy and Notion calls run on a local machine.
+  </p>
+</footer>
+
+</body>
+</html>
