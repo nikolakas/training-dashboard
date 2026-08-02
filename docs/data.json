@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-02T15:50:59Z",
+  "generated_at": "2026-08-02T15:58:30Z",
   "date": "2026-08-02",
   "lookback_days": 28,
   "history_days": 90,
@@ -103,8 +103,8 @@
       "flag": null
     },
     "stretches": [
-      "Hanging lat stretch or child's pose reach, 2-3x30s",
-      "Wall bicep stretch (arm extended, palm on wall, rotate away)"
+      "Wall bicep stretch (arm extended, palm on wall, rotate away)",
+      "Hanging lat stretch or child's pose reach, 2-3x30s"
     ],
     "volume": {
       "chest": 49,
