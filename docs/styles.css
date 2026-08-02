@@ -282,9 +282,74 @@ code {
 }
 a { color: var(--text); }
 
+/* ---------- multi-view shell ---------- */
+.viewport { position: relative; }
+
+.view { display: none; padding: 30px 0 40px; animation: fade .22s ease both; }
+.view.is-active { display: block; }
+@keyframes fade { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .view { animation: none; } }
+
+.vhead { margin-bottom: 24px; }
+.vhead h1 {
+  margin: 0; font-size: clamp(1.75rem, 4.2vw, 2.6rem);
+  line-height: 1.05; letter-spacing: -0.035em; font-weight: 600;
+}
+.vhead .lede { margin: 11px 0 0; color: var(--muted); font-size: 0.92rem; max-width: 60ch; }
+
+.boot-error {
+  margin: 16px auto; width: min(1240px, 92vw);
+  background: #fdf1ee; border: 1px solid #e6c3b9; color: #8a3b26;
+  border-radius: var(--r); padding: 12px 15px; font-size: 0.86rem;
+}
+
+/* top nav (desktop) */
+.navtabs { display: flex; gap: 22px; }
+.navtabs button {
+  background: none; border: 0; padding: 5px 0; cursor: pointer;
+  font: inherit; font-size: 0.85rem; color: var(--muted);
+  border-bottom: 1.5px solid transparent;
+}
+.navtabs button:hover { color: var(--text); }
+.navtabs button.active { color: var(--text); border-bottom-color: var(--ink); }
+
+/* bottom tab bar (phone) */
+.tabbar {
+  display: none;
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-top: 1px solid var(--line);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.tabbar-inner { display: flex; }
+.tabbar button {
+  flex: 1; background: none; border: 0; cursor: pointer; font: inherit;
+  padding: 9px 2px 8px; color: var(--muted); font-size: 0.63rem;
+  letter-spacing: 0.04em; display: flex; flex-direction: column;
+  align-items: center; gap: 3px; position: relative;
+}
+.tabbar button .ico { font-size: 1.02rem; line-height: 1; }
+.tabbar button.active { color: var(--text); font-weight: 600; }
+.tabbar button.active::before {
+  content: ""; position: absolute; top: 0; left: 22%; right: 22%;
+  height: 2px; background: var(--ink); border-radius: 0 0 2px 2px;
+}
+
+/* swipe hint */
+.swipe-dots { display: none; gap: 5px; justify-content: center; padding: 4px 0 0; }
+.swipe-dots i { width: 5px; height: 5px; border-radius: 50%; background: var(--line-strong); }
+.swipe-dots i.on { background: var(--ink); }
+
 /* ---------- phone ---------- */
 @media (max-width: 860px) {
   .navtabs { display: none; }
+}
+@media (max-width: 860px) {
+  .tabbar { display: block; }
+  .swipe-dots { display: flex; }
+  body { padding-bottom: 62px; }   /* room for the fixed tab bar */
+  #dl-btn { display: none; }        /* lives in the More view on phone */
 }
 @media (max-width: 720px) {
   .wrap { width: 91vw; }
@@ -292,9 +357,9 @@ a { color: var(--text); }
   .topbar-inner { height: 52px; gap: 10px; }
   .brand .ctx { display: none; }
   .brand .divider { display: none; }
-  .hero-inner { padding: 30px 0 26px; }
-  .hero h1 { font-size: 2rem; }
-  .hero .lede { font-size: 0.9rem; }
+  .view { padding: 20px 0 26px; }
+  .vhead { margin-bottom: 18px; }
+  .vhead .lede { font-size: 0.88rem; }
   .stat-strip { grid-template-columns: repeat(2, 1fr); margin-top: 22px; }
   .stat {
     border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);

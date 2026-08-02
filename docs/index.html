@@ -7,7 +7,6 @@
 <meta name="description" content="Personal training dashboard - progression, volume, streaks and strength standing, generated locally from Hevy.">
 <link rel="stylesheet" href="styles.css">
 
-<!-- installable on phone -->
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#ffffff">
 <meta name="mobile-web-app-capable" content="yes">
@@ -17,11 +16,13 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
 <script src="app.js" defer></script>
 </head>
 <body>
 
+<!-- ── top bar ─────────────────────────────────────────────── -->
 <div class="topbar">
   <div class="wrap topbar-inner">
     <div class="brand">
@@ -30,158 +31,146 @@
       <span class="divider">|</span>
       <span class="ctx" id="ctx">—</span>
     </div>
-    <nav class="navtabs">
-      <a href="#today" class="active">Today</a>
-      <a href="#sessions">Sessions</a>
-      <a href="#trends">Trends</a>
-      <a href="#standing">Standing</a>
-      <a href="#records">Records</a>
-    </nav>
+    <nav class="navtabs" id="navtabs"></nav>
     <button id="dl-btn" class="btn btn-sm btn-ghost" title="Save a standalone offline copy">Download</button>
   </div>
 </div>
 
-<header class="hero">
-  <div class="wrap hero-inner">
-    <p class="eyebrow" id="eyebrow">Loading</p>
-    <h1 id="headline">Training Dashboard</h1>
-    <p class="lede" id="lede">
-      Generated locally from your Hevy history. Progression, fatigue, volume and
-      strength standing — recalculated every morning.
-    </p>
-    <div class="stat-strip" id="stats"></div>
-  </div>
-</header>
+<div id="boot-error" class="boot-error" hidden></div>
 
-<main class="wrap">
+<!-- ── views ───────────────────────────────────────────────── -->
+<div class="viewport" id="viewport">
 
-  <!-- TODAY -->
-  <section class="band" id="today">
-    <div class="band-head">
-      <h2>Today</h2>
-      <p class="note">Progression calls use each lift's real-world increment, learned from your own loading history.</p>
-    </div>
-    <div id="rest-flag"></div>
-    <div class="cols-2">
-      <div>
-        <h3 class="sub">Progression suggestions</h3>
-        <div id="suggestions" class="stack"></div>
-      </div>
-      <div>
-        <h3 class="sub">Stretching</h3>
-        <ul id="stretches" class="bullets"></ul>
-        <h3 class="sub">Streak</h3>
-        <div class="panel">
-          <div class="streak-row">
-            <span id="flame" class="flame">🔥</span>
-            <div>
-              <div class="streak-num" id="streak-num">–</div>
-              <div class="muted small" id="streak-note"></div>
+  <!-- 1 · TODAY -->
+  <section class="view is-active" id="v-today" data-title="Today">
+    <div class="wrap">
+      <header class="vhead">
+        <p class="eyebrow" id="eyebrow">Loading</p>
+        <h1 id="headline">Today</h1>
+        <div class="stat-strip" id="stats"></div>
+      </header>
+
+      <div id="rest-flag"></div>
+
+      <div class="cols-2">
+        <div>
+          <h3 class="sub">Progression suggestions</h3>
+          <div id="suggestions" class="stack"></div>
+        </div>
+        <div>
+          <h3 class="sub">Streak</h3>
+          <div class="panel">
+            <div class="streak-row">
+              <span id="flame" class="flame">🔥</span>
+              <div>
+                <div class="streak-num" id="streak-num">–</div>
+                <div class="muted small" id="streak-note"></div>
+              </div>
             </div>
+            <div id="streak-weeks" class="weekbar"></div>
           </div>
-          <div id="streak-weeks" class="weekbar"></div>
+          <h3 class="sub">Stretching</h3>
+          <ul id="stretches" class="bullets"></ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- RECENT SESSIONS -->
-  <section class="band" id="sessions">
-    <div class="band-head">
-      <h2>Recent Workouts</h2>
-      <p class="note">Your last sessions, with the heaviest set logged for each exercise.</p>
+  <!-- 2 · SESSIONS -->
+  <section class="view" id="v-sessions" data-title="Sessions">
+    <div class="wrap">
+      <header class="vhead">
+        <p class="eyebrow">Log</p>
+        <h1>Recent Workouts</h1>
+        <p class="lede">Your last sessions, with the heaviest set logged for each exercise.</p>
+      </header>
+      <div id="sessions-list" class="sessions"></div>
     </div>
-    <div id="sessions-list" class="sessions"></div>
   </section>
 
-  <!-- TRENDS -->
-  <section class="band" id="trends">
-    <div class="band-head">
-      <h2>Trends</h2>
-      <p class="note">Heaviest set per session across the last <span id="hist-days">90</span> days.</p>
+  <!-- 3 · TRENDS -->
+  <section class="view" id="v-trends" data-title="Trends">
+    <div class="wrap">
+      <header class="vhead">
+        <p class="eyebrow">Last <span id="hist-days">90</span> days</p>
+        <h1>Trends</h1>
+        <p class="lede">Heaviest set per session for each compound lift.</p>
+      </header>
+      <div id="charts" class="chart-grid"></div>
+
+      <h3 class="sub" style="margin-top:34px">Push · Pull · Legs — last <span id="lookback-days">28</span> days</h3>
+      <div class="chart-box tall"><canvas id="battle-chart"></canvas></div>
+      <p id="battle-commentary" class="commentary"></p>
     </div>
-    <div id="charts" class="chart-grid"></div>
   </section>
 
-  <!-- VOLUME BATTLE -->
-  <section class="band">
-    <div class="band-head">
-      <h2>Push · Pull · Legs</h2>
-      <p class="note">Total sets over the last <span id="lookback-days">28</span> days, grouped by day type.</p>
-    </div>
-    <div class="chart-box" style="height:300px"><canvas id="battle-chart"></canvas></div>
-    <p id="battle-commentary" class="commentary"></p>
-  </section>
+  <!-- 4 · RECORDS -->
+  <section class="view" id="v-records" data-title="Records">
+    <div class="wrap">
+      <header class="vhead">
+        <p class="eyebrow">All time</p>
+        <h1>Records</h1>
+        <p class="lede">Best set per lift across your full history, and where that puts you against published standards.</p>
+      </header>
 
-  <!-- WHERE I STAND -->
-  <section class="band" id="standing">
-    <div class="band-head">
-      <h2>Where I Stand</h2>
-      <p class="note">Best estimated 1RM (Epley) against published standards. Bodyweight is stored only in this browser and never uploaded.</p>
-    </div>
-    <div class="bw-row">
-      <label for="bw">Bodyweight (kg)</label>
-      <input type="number" id="bw" min="40" max="140" step="0.5" placeholder="e.g. 75">
-      <button id="bw-save" class="btn btn-sm">Update</button>
-    </div>
-    <div id="standings" class="stack"></div>
-    <p class="muted small" id="standards-credit" style="margin-top:14px"></p>
-  </section>
-
-  <!-- RESEARCH -->
-  <section class="band">
-    <div class="band-head">
-      <h2>Latest Research</h2>
-      <p class="note">From the Weekly Findings Notion database, pulled locally at export time.</p>
-    </div>
-    <div id="research" class="stack"></div>
-  </section>
-
-  <!-- PRs -->
-  <section class="band" id="records">
-    <div class="band-head">
-      <h2>Hall of Fame</h2>
-      <p class="note">All-time best set per lift across your full history, ranked by estimated 1RM.</p>
-    </div>
-    <div class="pr-controls">
-      <button class="btn btn-sm" data-pr="compound">Compounds</button>
-      <button class="btn btn-sm btn-ghost" data-pr="all">All lifts</button>
-    </div>
-    <div id="prs" class="pr-wall"></div>
-  </section>
-
-  <!-- SOUNDTRACK + EXCUSES -->
-  <section class="band">
-    <div class="cols-2">
-      <div>
-        <div class="band-head"><h2>Today's Soundtrack</h2></div>
-        <div id="soundtrack" class="sound-row"></div>
+      <h3 class="sub">Where I stand</h3>
+      <div class="bw-row">
+        <label for="bw">Bodyweight (kg)</label>
+        <input type="number" id="bw" min="40" max="140" step="0.5" placeholder="e.g. 75" inputmode="decimal">
+        <button id="bw-save" class="btn btn-sm">Update</button>
       </div>
-      <div>
-        <div class="band-head">
-          <h2>Skip-Day Excuse</h2>
-        </div>
-        <p class="note muted small" style="margin:-10px 0 14px">Purely decorative. Affects nothing. Judges nothing.</p>
-        <button id="excuse-btn" class="btn btn-ghost">Generate an excuse</button>
-        <p id="excuse" class="excuse"></p>
+      <div id="standings" class="stack"></div>
+      <p class="muted small" id="standards-credit" style="margin-top:14px"></p>
+
+      <h3 class="sub" style="margin-top:34px">Hall of fame</h3>
+      <div class="pr-controls">
+        <button class="btn btn-sm" data-pr="compound">Compounds</button>
+        <button class="btn btn-sm btn-ghost" data-pr="all">All lifts</button>
       </div>
+      <div id="prs" class="pr-wall"></div>
     </div>
   </section>
 
-  <!-- CHANGELOG -->
-  <section class="band">
-    <div class="band-head"><h2>Changelog</h2></div>
-    <ol id="changelog" class="timeline"></ol>
+  <!-- 5 · MORE -->
+  <section class="view" id="v-more" data-title="More">
+    <div class="wrap">
+      <header class="vhead">
+        <p class="eyebrow">Context</p>
+        <h1>More</h1>
+      </header>
+
+      <h3 class="sub">Today's soundtrack</h3>
+      <div id="soundtrack" class="sound-row"></div>
+
+      <h3 class="sub" style="margin-top:34px">Skip-day excuse</h3>
+      <p class="muted small" style="margin:0 0 12px">Purely decorative. Affects nothing. Judges nothing.</p>
+      <button id="excuse-btn" class="btn btn-ghost">Generate an excuse</button>
+      <p id="excuse" class="excuse"></p>
+
+      <h3 class="sub" style="margin-top:34px">Latest research</h3>
+      <p class="muted small" style="margin:0 0 12px">From the Weekly Findings Notion database, pulled locally at export time.</p>
+      <div id="research" class="stack"></div>
+
+      <h3 class="sub" style="margin-top:34px">Changelog</h3>
+      <ol id="changelog" class="timeline"></ol>
+
+      <h3 class="sub" style="margin-top:34px">Offline</h3>
+      <p class="muted small" style="margin:0 0 12px">
+        Save a single self-contained file with today's data frozen in — opens with no network.
+      </p>
+      <button id="dl-btn-2" class="btn btn-ghost">Download this dashboard</button>
+
+      <p class="muted small" style="margin-top:34px">
+        Generated locally by <code>hevy_coach.py</code>. No API keys are present in this site or in
+        <code>data.json</code> — all Hevy and Notion calls run on a local machine.
+      </p>
+    </div>
   </section>
 
-</main>
+</div>
 
-<footer class="wrap foot">
-  <p class="muted small" style="margin:0">
-    Generated locally by <code>hevy_coach.py</code>. No API keys are present in this site or in
-    <code>data.json</code> — all Hevy and Notion calls run on a local machine.
-  </p>
-</footer>
+<!-- ── bottom tab bar (phone) ──────────────────────────────── -->
+<nav class="tabbar" id="tabbar"></nav>
 
 </body>
 </html>

@@ -45,6 +45,33 @@ function emptyNote(msg) {
   return `<p class="muted small">${esc(msg)}</p>`;
 }
 
+/* Live chart instances, so they can be resized when their view is shown. */
+const CHARTS = [];
+
+/* Run a render in isolation. One broken section must not blank the page. */
+function safe(name, fn) {
+  try {
+    return fn();
+  } catch (err) {
+    console.error(`[${name}]`, err);
+    const box = $("boot-error");
+    if (box) {
+      box.hidden = false;
+      const prev = box.textContent ? box.textContent + " · " : "Some sections failed to render: ";
+      box.textContent = prev + name;
+    }
+    return null;
+  }
+}
+
+window.addEventListener("error", (e) => {
+  const box = $("boot-error");
+  if (box && e.message) {
+    box.hidden = false;
+    box.textContent = "Script error: " + e.message;
+  }
+});
+
 /* ---------------- Today --------------------------------------------------- */
 function renderToday(data) {
   const rest = section(data, "rest", {});
@@ -73,7 +100,11 @@ function renderToday(data) {
 /* ---------------- Streak -------------------------------------------------- */
 function renderStreak(data) {
   const s = section(data, "streak");
-  if (!s) { $("streak-card").innerHTML = "<h2>Streak</h2>" + emptyNote("No streak data in this export."); return; }
+  if (!s) {
+    $("streak-num").textContent = "–";
+    $("streak-note").textContent = "No streak data in this export.";
+    return;
+  }
 
   const n = s.current_streak_weeks || 0;
   $("streak-num").textContent = n === 1 ? "1 week" : `${n} weeks`;
@@ -116,7 +147,7 @@ function renderTrends(data) {
 
   names.forEach((name, i) => {
     const pts = (hist[name] || []).filter(p => p.top_weight_kg != null);
-    new Chart($(`chart-${i}`), {
+    CHARTS.push(new Chart($(`chart-${i}`), {
       type: "line",
       data: {
         labels: pts.map(p => p.date),
@@ -147,10 +178,10 @@ function renderTrends(data) {
         },
         scales: {
           x: { ticks: AXIS, grid: GRID },
-          y: { ticks: AXIS, grid: GRID, title: { display: true, text: "kg", color: "#93a1b3" } },
+          y: { ticks: AXIS, grid: GRID, title: { display: true, text: "kg", color: "#6f6f68" } },
         },
       },
-    });
+    }));
   });
 }
 
@@ -162,7 +193,7 @@ function renderBattle(data) {
   const labels = ["Push", "Pull", "Legs"];
   const vals = labels.map(l => d[l] || 0);
 
-  new Chart($("battle-chart"), {
+  CHARTS.push(new Chart($("battle-chart"), {
     type: "bar",
     data: {
       labels,
@@ -178,10 +209,10 @@ function renderBattle(data) {
       plugins: { legend: { display: false } },
       scales: {
         x: { ticks: AXIS, grid: { display: false } },
-        y: { ticks: AXIS, grid: GRID, beginAtZero: true, title: { display: true, text: "sets", color: "#93a1b3" } },
+        y: { ticks: AXIS, grid: GRID, beginAtZero: true, title: { display: true, text: "sets", color: "#6f6f68" } },
       },
     },
-  });
+  }));
 
   const max = Math.max(...vals), min = Math.min(...vals);
   const winner = labels[vals.indexOf(max)];
@@ -427,8 +458,8 @@ function renderSessions(data) {
 }
 
 /* ---------------- offline download ---------------------------------------- */
-async function downloadStandalone(data, standards) {
-  const btn = $("dl-btn");
+async function downloadStandalone(data, standards, btn) {
+  btn = btn || $("dl-btn");
   const old = btn.textContent;
   btn.textContent = "Packaging…";
   try {
@@ -481,24 +512,26 @@ async function boot() {
   $("hist-days").textContent = data.history_days ?? 90;
   $("lookback-days").textContent = data.lookback_days ?? 28;
 
-  renderHero(data);
-  renderSessions(data);
-  renderToday(data);
-  renderStreak(data);
-  renderResearch(data);
-  renderTrends(data);
-  renderBattle(data);
-  renderPRs(data);
-  renderStand(data, standards);
-  renderSoundtrack(data);
-  renderChangelog(data);
+  // Each section is isolated: one failure can no longer wipe out the rest
+  // of the page (that was the old silent-blank-section bug).
+  safe("hero", () => renderHero(data));
+  safe("sessions", () => renderSessions(data));
+  safe("today", () => renderToday(data));
+  safe("streak", () => renderStreak(data));
+  safe("research", () => renderResearch(data));
+  safe("records", () => renderPRs(data));
+  safe("standing", () => renderStand(data, standards));
+  safe("soundtrack", () => renderSoundtrack(data));
+  safe("changelog", () => renderChangelog(data));
+
+  initViews(data);
 
   // bodyweight
   const saved = localStorage.getItem(BW_KEY);
   if (saved) $("bw").value = saved;
   $("bw-save").addEventListener("click", () => {
     const v = parseFloat($("bw").value);
-    if (v > 0) { localStorage.setItem(BW_KEY, String(v)); renderStand(data, standards); }
+    if (v > 0) { localStorage.setItem(BW_KEY, String(v)); safe("standing", () => renderStand(data, standards)); }
   });
   $("bw").addEventListener("keydown", (e) => { if (e.key === "Enter") $("bw-save").click(); });
 
@@ -508,30 +541,19 @@ async function boot() {
       document.querySelectorAll("[data-pr]").forEach(b => b.classList.add("btn-ghost"));
       btn.classList.remove("btn-ghost");
       PR_MODE = btn.dataset.pr;
-      renderPRs(data);
+      safe("records", () => renderPRs(data));
     });
   });
 
-  // one-button offline download
-  const dl = $("dl-btn");
-  if (dl) dl.addEventListener("click", () => downloadStandalone(data, standards));
-
-  // nav highlight
-  const secs = [...document.querySelectorAll("main section[id]")];
-  const links = [...document.querySelectorAll(".navtabs a")];
-  if ("IntersectionObserver" in window && secs.length) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(en => {
-        if (!en.isIntersecting) return;
-        links.forEach(l => l.classList.toggle("active", l.getAttribute("href") === "#" + en.target.id));
-      });
-    }, { rootMargin: "-45% 0px -50% 0px" });
-    secs.forEach(s => io.observe(s));
-  }
+  // offline download (both entry points)
+  ["dl-btn", "dl-btn-2"].forEach(id => {
+    const b = $(id);
+    if (b) b.addEventListener("click", () => downloadStandalone(data, standards, b));
+  });
 
   // installable on phone (ignored when opened as a local file)
-  if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
-    navigator.serviceWorker.register("sw.js").catch(() => {});
+  if (navigator.serviceWorker && location.protocol.startsWith("http")) {
+    try { navigator.serviceWorker.register("sw.js").catch(() => {}); } catch {}
   }
 
   // excuses
@@ -541,6 +563,94 @@ async function boot() {
     last = i;
     $("excuse").textContent = "“" + EXCUSES[i] + "”";
   });
+}
+
+/* ---------------- view controller: tabs + swipe --------------------------- */
+const TABS = [
+  { id: "v-today",    label: "Today",    ico: "◉" },
+  { id: "v-sessions", label: "Sessions", ico: "≡" },
+  { id: "v-trends",   label: "Trends",   ico: "↗" },
+  { id: "v-records",  label: "Records",  ico: "★" },
+  { id: "v-more",     label: "More",     ico: "⋯" },
+];
+let CUR = 0;
+let TRENDS_READY = false;
+
+function initViews(data) {
+  const views = TABS.map(t => document.getElementById(t.id)).filter(Boolean);
+
+  // top nav
+  $("navtabs").innerHTML = TABS
+    .map((t, i) => `<button data-i="${i}">${esc(t.label)}</button>`).join("");
+  // bottom bar
+  $("tabbar").innerHTML =
+    `<div class="tabbar-inner">` + TABS.map((t, i) =>
+      `<button data-i="${i}"><span class="ico">${t.ico}</span><span>${esc(t.label)}</span></button>`
+    ).join("") + `</div>`;
+
+  document.querySelectorAll("[data-i]").forEach(b =>
+    b.addEventListener("click", () => show(parseInt(b.dataset.i, 10), data)));
+
+  // deep link (#trends) and back/forward
+  const fromHash = () => {
+    const h = (location.hash || "").replace("#", "");
+    const i = TABS.findIndex(t => t.id === "v-" + h);
+    return i >= 0 ? i : 0;
+  };
+  window.addEventListener("hashchange", () => show(fromHash(), data, true));
+
+  // keyboard
+  window.addEventListener("keydown", (e) => {
+    if (e.target.tagName === "INPUT") return;
+    if (e.key === "ArrowRight") show(CUR + 1, data);
+    if (e.key === "ArrowLeft") show(CUR - 1, data);
+  });
+
+  // swipe
+  const vp = $("viewport");
+  let x0 = null, y0 = null, t0 = 0;
+  vp.addEventListener("touchstart", (e) => {
+    const t = e.changedTouches[0];
+    x0 = t.clientX; y0 = t.clientY; t0 = Date.now();
+  }, { passive: true });
+  vp.addEventListener("touchend", (e) => {
+    if (x0 == null) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - x0, dy = t.clientY - y0, dt = Date.now() - t0;
+    x0 = null;
+    // horizontal, far enough, fast enough, and not a vertical scroll
+    if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.8 && dt < 700) {
+      show(dx < 0 ? CUR + 1 : CUR - 1, data);
+    }
+  }, { passive: true });
+
+  show(fromHash(), data, true);
+}
+
+function show(i, data, silent) {
+  i = Math.max(0, Math.min(TABS.length - 1, i));
+  CUR = i;
+  TABS.forEach((t, k) => {
+    const el = document.getElementById(t.id);
+    if (el) el.classList.toggle("is-active", k === i);
+  });
+  document.querySelectorAll("[data-i]").forEach(b =>
+    b.classList.toggle("active", parseInt(b.dataset.i, 10) === i));
+
+  if (!silent) history.replaceState(null, "", "#" + TABS[i].id.replace("v-", ""));
+  window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
+
+  // Charts must be built/resized while visible - a canvas in a display:none
+  // container measures 0x0 and renders blank.
+  if (TABS[i].id === "v-trends") {
+    if (!TRENDS_READY) {
+      TRENDS_READY = true;
+      safe("trends", () => renderTrends(data));
+      safe("battle", () => renderBattle(data));
+    } else {
+      requestAnimationFrame(() => CHARTS.forEach(c => { try { c.resize(); } catch {} }));
+    }
+  }
 }
 
 boot();
