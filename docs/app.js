@@ -81,13 +81,61 @@ function renderToday(data) {
     : `<div class="flag ok">No rest flag triggered — you're clear to train.</div>`;
 
   const sugg = section(data, "suggestions", []) || [];
-  $("suggestions").innerHTML = sugg.length ? sugg.map(s => {
+  const order = { increase: 0, deload: 1, note: 2 };
+  const sorted = [...sugg].sort((a, b) => (order[a.type] ?? 3) - (order[b.type] ?? 3));
+
+  $("suggestions").innerHTML = sorted.length ? sorted.map(s => {
     const kind = ["increase", "deload", "note"].includes(s.type) ? s.type : "note";
-    const label = { increase: "Increase", deload: "Deload", note: "Info" }[kind];
-    const zone = s.zone ? `<span class="pill">${esc(s.zone)}</span>` : "";
-    return `<div class="item ${kind}">
-      <div class="name">${esc(s.exercise)}<span class="pill">${label}</span>${zone}</div>
-      <div class="detail">${esc(s.detail)}</div>
+    const arrow = { increase: "↑", deload: "↓", note: "→" }[kind];
+    const prev = s.previous || {};
+
+    // "last time" line - what they actually did
+    const lastBits = [];
+    if (prev.weight_kg != null) {
+      lastBits.push(`${num(prev.weight_kg)}kg × ${prev.reps ?? "?"}`);
+      if (prev.sets) lastBits.push(`${prev.sets} sets`);
+      if (prev.rpe != null) lastBits.push(`RPE ${prev.rpe}`);
+    }
+    const lastLine = lastBits.length
+      ? `Last time: ${lastBits.join(" · ")}${prev.date ? " on " + fmtDay(prev.date) : ""}`
+      : "No earlier session logged";
+
+    // hover / tap detail
+    const tipBits = [];
+    if (s.current_weight_kg != null) {
+      tipBits.push(`Most recent: ${num(s.current_weight_kg)}kg × ${s.current_reps ?? "?"}`
+        + (s.current_sets ? ` (${s.current_sets} sets)` : "")
+        + (s.current_rpe != null ? ` @ RPE ${s.current_rpe}` : ""));
+    }
+    tipBits.push(lastLine);
+    if (s.why) tipBits.push(s.why);
+    if (s.increment_kg != null) {
+      tipBits.push(`Step ${num(s.increment_kg)}kg (${s.increment_source === "history"
+        ? "learned from your history" : "category default"})`);
+    }
+    if (s.zone) tipBits.push(s.zone);
+
+    const delta = (s.delta_kg && s.delta_kg !== 0)
+      ? `<span class="delta ${s.delta_kg > 0 ? "up" : "down"}">${s.delta_kg > 0 ? "+" : ""}${num(s.delta_kg)}kg</span>`
+      : "";
+    // Make the blocker obvious: without RPE we can't make a real call.
+    const blocked = (s.current_rpe == null)
+      ? `<span class="flagchip">no RPE</span>` : "";
+
+    return `<div class="sug ${kind}" tabindex="0">
+      <div class="sug-main">
+        <div class="sug-ex">${esc(s.exercise)}${blocked}</div>
+        <div class="sug-do">
+          <span class="sug-verb">${esc(s.action || "")}</span>
+          <span class="sug-arrow">${arrow}</span>
+          <span class="sug-target">${esc(s.target_text || "—")}</span>
+          ${delta}
+        </div>
+      </div>
+      <div class="sug-last">${esc(lastLine)}</div>
+      <div class="sug-tip" role="tooltip">
+        ${tipBits.map(b => `<div>${esc(b)}</div>`).join("")}
+      </div>
     </div>`;
   }).join("") : emptyNote("No suggestions today — not enough recent data, or nothing changed.");
 
@@ -417,6 +465,13 @@ function leader(byDay) {
 }
 
 /* ---------------- recent workouts ----------------------------------------- */
+function fmtDay(iso) {
+  try {
+    return new Date(iso + "T00:00:00")
+      .toLocaleDateString(undefined, { day: "numeric", month: "short" });
+  } catch { return iso; }
+}
+
 function relativeDay(iso) {
   const d = new Date(iso + "T00:00:00");
   const days = Math.round((Date.now() - d.getTime()) / 86400000);
@@ -525,6 +580,19 @@ async function boot() {
   safe("changelog", () => renderChangelog(data));
 
   initViews(data);
+
+  // Tap a suggestion to reveal its detail (phones have no hover).
+  // Delegated, so it survives re-renders of the list.
+  $("suggestions").addEventListener("click", (e) => {
+    const row = e.target.closest(".sug");
+    document.querySelectorAll(".sug.open").forEach(el => { if (el !== row) el.classList.remove("open"); });
+    if (row) row.classList.toggle("open");
+  });
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("#suggestions")) {
+      document.querySelectorAll(".sug.open").forEach(el => el.classList.remove("open"));
+    }
+  });
 
   // bodyweight
   const saved = localStorage.getItem(BW_KEY);
