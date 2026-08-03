@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-03T05:29:05Z",
+  "generated_at": "2026-08-03T15:40:53Z",
   "date": "2026-08-03",
   "lookback_days": 28,
   "history_days": 90,
@@ -17,7 +17,7 @@
         "current_reps": 6,
         "current_sets": 6,
         "current_rpe": null,
-        "increment_kg": 3.34,
+        "increment_kg": 5,
         "increment_source": "history",
         "previous": {
           "date": "2026-07-16",
@@ -71,7 +71,7 @@
         "current_reps": 15,
         "current_sets": 3,
         "current_rpe": null,
-        "increment_kg": 2.75,
+        "increment_kg": 2.5,
         "increment_source": "history",
         "previous": {
           "date": "2026-07-12",
@@ -152,7 +152,7 @@
         "current_reps": 10,
         "current_sets": 2,
         "current_rpe": null,
-        "increment_kg": 5.1,
+        "increment_kg": 2.5,
         "increment_source": "history",
         "previous": {
           "date": "2026-07-27",
@@ -179,7 +179,7 @@
         "current_reps": 10,
         "current_sets": 4,
         "current_rpe": null,
-        "increment_kg": 5.0,
+        "increment_kg": 5,
         "increment_source": "history",
         "previous": {
           "date": "2026-07-27",
@@ -433,13 +433,13 @@
     ],
     "increments": {
       "Lat Pulldown (Cable)": {
-        "increment_kg": 3.34,
+        "increment_kg": 5,
         "source": "history",
         "changes_used": 22,
         "category_default_kg": 2.5
       },
       "Iso-Lateral Row (Machine)": {
-        "increment_kg": 5,
+        "increment_kg": 2.5,
         "source": "history",
         "changes_used": 19,
         "category_default_kg": 2.5
@@ -463,13 +463,13 @@
         "category_default_kg": 2.0
       },
       "Bicep Curl (Cable)": {
-        "increment_kg": 5.0,
+        "increment_kg": 1,
         "source": "history",
         "changes_used": 6,
         "category_default_kg": 2.0
       },
       "Reverse Curl (Cable)": {
-        "increment_kg": 5.0,
+        "increment_kg": 5,
         "source": "history",
         "changes_used": 10,
         "category_default_kg": 2.0
@@ -481,7 +481,7 @@
         "category_default_kg": 2.5
       },
       "Incline Bench Press (Dumbbell)": {
-        "increment_kg": 3.0,
+        "increment_kg": 3,
         "source": "history",
         "changes_used": 10,
         "category_default_kg": 2.5
@@ -493,7 +493,7 @@
         "category_default_kg": 2.5
       },
       "Bench Press (Barbell)": {
-        "increment_kg": 5.0,
+        "increment_kg": 2.5,
         "source": "history",
         "changes_used": 20,
         "category_default_kg": 2.5
@@ -535,19 +535,19 @@
         "category_default_kg": 2.5
       },
       "Triceps Rope Pushdown": {
-        "increment_kg": 5.0,
+        "increment_kg": 5,
         "source": "history",
         "changes_used": 12,
         "category_default_kg": 2.0
       },
       "Overhead Triceps Extension (Cable)": {
-        "increment_kg": 5.0,
+        "increment_kg": 5,
         "source": "history",
         "changes_used": 12,
         "category_default_kg": 2.0
       },
       "Shoulder Press (Dumbbell)": {
-        "increment_kg": 2.0,
+        "increment_kg": 2,
         "source": "history",
         "changes_used": 10,
         "category_default_kg": 2.5
@@ -619,7 +619,7 @@
         "category_default_kg": 2.0
       },
       "Pushdown Tricipiti con Corda": {
-        "increment_kg": 4,
+        "increment_kg": 5,
         "source": "history",
         "changes_used": 5,
         "category_default_kg": 2.0
@@ -631,7 +631,7 @@
         "category_default_kg": 2.5
       },
       "Curl Bicipiti (Cavo)": {
-        "increment_kg": 2.5,
+        "increment_kg": 1.5,
         "source": "history",
         "changes_used": 3,
         "category_default_kg": 2.0
@@ -685,8 +685,8 @@
         "category_default_kg": 2.5
       },
       "Leg Press (Macchina)": {
-        "increment_kg": 5.0,
-        "source": "category-default",
+        "increment_kg": 10.0,
+        "source": "override",
         "changes_used": 0,
         "category_default_kg": 5.0
       },
@@ -877,7 +877,7 @@
         "category_default_kg": 2.5
       },
       "Butterfly (Pec Deck)": {
-        "increment_kg": 5.1,
+        "increment_kg": 2.5,
         "source": "history",
         "changes_used": 13,
         "category_default_kg": 2.5
@@ -925,9 +925,9 @@
         "category_default_kg": 5.0
       },
       "Leg Press (Machine)": {
-        "increment_kg": 17.5,
-        "source": "history",
-        "changes_used": 8,
+        "increment_kg": 10.0,
+        "source": "override",
+        "changes_used": 0,
         "category_default_kg": 5.0
       },
       "Seated Calf Raise": {
@@ -961,7 +961,7 @@
         "category_default_kg": 2.0
       },
       "Seated Cable Row - Bar Wide Grip": {
-        "increment_kg": 2.5,
+        "increment_kg": 2,
         "source": "history",
         "changes_used": 9,
         "category_default_kg": 2.5
@@ -979,7 +979,7 @@
         "category_default_kg": 2.5
       },
       "Triceps Pressdown": {
-        "increment_kg": 2.75,
+        "increment_kg": 2.5,
         "source": "history",
         "changes_used": 8,
         "category_default_kg": 2.0
