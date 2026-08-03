@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-03T15:42:43Z",
+  "generated_at": "2026-08-03T15:44:03Z",
   "date": "2026-08-03",
   "lookback_days": 28,
   "history_days": 90,
@@ -1303,6 +1303,22 @@
     },
     "changelog": {
       "entries": [
+        {
+          "date": "2026-08-03",
+          "text": "Increments now use the mode of your real jumps, so every suggestion is loadable"
+        },
+        {
+          "date": "2026-08-03",
+          "text": "Leg press honours the 10kg rule again (the old setting was unreachable)"
+        },
+        {
+          "date": "2026-08-03",
+          "text": "Missed 8am runs now catch up when the laptop opens, and run on battery"
+        },
+        {
+          "date": "2026-08-03",
+          "text": "Notion research refreshes automatically as part of the morning run"
+        },
         {
           "date": "2026-08-02",
           "text": "RPE-zone logic split compound vs accessory"
