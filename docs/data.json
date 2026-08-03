@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-02T18:29:46Z",
-  "date": "2026-08-02",
+  "generated_at": "2026-08-03T05:29:05Z",
+  "date": "2026-08-03",
   "lookback_days": 28,
   "history_days": 90,
   "sessions_analyzed": 14,
@@ -15,11 +15,23 @@
         "last_date": "2026-07-28",
         "current_weight_kg": 86.18,
         "current_reps": 6,
+        "current_sets": 6,
         "current_rpe": null,
         "increment_kg": 3.34,
         "increment_source": "history",
+        "previous": {
+          "date": "2026-07-16",
+          "weight_kg": 82.5,
+          "reps": 6,
+          "sets": 4,
+          "rpe": null
+        },
         "type": "note",
         "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "86.18 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
         "detail": "Trending up (2026-07-16: 82.5kg x6 -> 2026-07-28: 86.18kg x6). No RPE logged - log RPE next time for a sharper suggestion."
       },
       {
@@ -30,11 +42,23 @@
         "last_date": "2026-07-16",
         "current_weight_kg": 75,
         "current_reps": 10,
+        "current_sets": 2,
         "current_rpe": null,
         "increment_kg": 2.5,
         "increment_source": "category-default",
+        "previous": {
+          "date": "2026-07-12",
+          "weight_kg": 60,
+          "reps": 10,
+          "sets": 3,
+          "rpe": null
+        },
         "type": "note",
         "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "75 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
         "detail": "Trending up (2026-07-12: 60kg x10 -> 2026-07-16: 75kg x10). No RPE logged - log RPE next time for a sharper suggestion."
       },
       {
@@ -45,11 +69,23 @@
         "last_date": "2026-07-17",
         "current_weight_kg": 60,
         "current_reps": 15,
+        "current_sets": 3,
         "current_rpe": null,
         "increment_kg": 2.75,
         "increment_source": "history",
+        "previous": {
+          "date": "2026-07-12",
+          "weight_kg": 35,
+          "reps": 15,
+          "sets": 2,
+          "rpe": null
+        },
         "type": "note",
         "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "60 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
         "detail": "Trending up (2026-07-12: 35kg x15 -> 2026-07-17: 60kg x15). No RPE logged - log RPE next time for a sharper suggestion."
       },
       {
@@ -60,11 +96,23 @@
         "last_date": "2026-07-29",
         "current_weight_kg": 100,
         "current_reps": 6,
+        "current_sets": 3,
         "current_rpe": null,
         "increment_kg": 5.0,
         "increment_source": "category-default",
+        "previous": {
+          "date": "2026-07-14",
+          "weight_kg": 100,
+          "reps": 5,
+          "sets": 4,
+          "rpe": null
+        },
         "type": "note",
         "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "100 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
         "detail": "Trending up (2026-07-14: 100kg x5 -> 2026-07-29: 100kg x6). No RPE logged - log RPE next time for a sharper suggestion."
       },
       {
@@ -75,11 +123,23 @@
         "last_date": "2026-08-01",
         "current_weight_kg": 22.5,
         "current_reps": 7,
+        "current_sets": 6,
         "current_rpe": null,
         "increment_kg": 2,
         "increment_source": "history",
+        "previous": {
+          "date": "2026-07-28",
+          "weight_kg": 22.5,
+          "reps": 3,
+          "sets": 6,
+          "rpe": null
+        },
         "type": "note",
         "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "22.5 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
         "detail": "Trending up (2026-07-28: 22.5kg x3 -> 2026-08-01: 22.5kg x7). No RPE logged - log RPE next time for a sharper suggestion."
       },
       {
@@ -90,11 +150,23 @@
         "last_date": "2026-07-31",
         "current_weight_kg": 49.9,
         "current_reps": 10,
+        "current_sets": 2,
         "current_rpe": null,
         "increment_kg": 5.1,
         "increment_source": "history",
+        "previous": {
+          "date": "2026-07-27",
+          "weight_kg": 49.9,
+          "reps": 8,
+          "sets": 3,
+          "rpe": null
+        },
         "type": "note",
         "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "49.9 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
         "detail": "Trending up (2026-07-27: 49.9kg x8 -> 2026-07-31: 49.9kg x10). No RPE logged - log RPE next time for a sharper suggestion."
       },
       {
@@ -105,11 +177,23 @@
         "last_date": "2026-07-31",
         "current_weight_kg": 32,
         "current_reps": 10,
+        "current_sets": 4,
         "current_rpe": null,
         "increment_kg": 5.0,
         "increment_source": "history",
+        "previous": {
+          "date": "2026-07-27",
+          "weight_kg": 30,
+          "reps": 8,
+          "sets": 3,
+          "rpe": null
+        },
         "type": "note",
         "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "32 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
         "detail": "Trending up (2026-07-27: 30kg x8 -> 2026-07-31: 32kg x10). No RPE logged - log RPE next time for a sharper suggestion."
       }
     ],
@@ -969,6 +1053,7 @@
           "date": "2026-05-07",
           "top_weight_kg": 105,
           "reps": 4,
+          "sets": 7,
           "avg_rpe": 8.07,
           "est_1rm_kg": 119.0
         },
@@ -976,6 +1061,7 @@
           "date": "2026-05-12",
           "top_weight_kg": 107.5,
           "reps": 4,
+          "sets": 7,
           "avg_rpe": 8.88,
           "est_1rm_kg": 121.8
         },
@@ -983,6 +1069,7 @@
           "date": "2026-05-16",
           "top_weight_kg": 110,
           "reps": 4,
+          "sets": 8,
           "avg_rpe": 7.88,
           "est_1rm_kg": 124.7
         },
@@ -990,6 +1077,7 @@
           "date": "2026-05-19",
           "top_weight_kg": 110,
           "reps": 4,
+          "sets": 7,
           "avg_rpe": 7.93,
           "est_1rm_kg": 124.7
         },
@@ -997,6 +1085,7 @@
           "date": "2026-05-22",
           "top_weight_kg": 110,
           "reps": 4,
+          "sets": 7,
           "avg_rpe": 7.86,
           "est_1rm_kg": 124.7
         },
@@ -1004,6 +1093,7 @@
           "date": "2026-05-31",
           "top_weight_kg": 110,
           "reps": 4,
+          "sets": 6,
           "avg_rpe": 8.08,
           "est_1rm_kg": 124.7
         },
@@ -1011,6 +1101,7 @@
           "date": "2026-06-05",
           "top_weight_kg": 110,
           "reps": 4,
+          "sets": 7,
           "avg_rpe": 7.93,
           "est_1rm_kg": 124.7
         },
@@ -1018,6 +1109,7 @@
           "date": "2026-06-10",
           "top_weight_kg": 110,
           "reps": 4,
+          "sets": 7,
           "avg_rpe": 8.07,
           "est_1rm_kg": 124.7
         },
@@ -1025,6 +1117,7 @@
           "date": "2026-06-15",
           "top_weight_kg": 110,
           "reps": 4,
+          "sets": 7,
           "avg_rpe": 8.88,
           "est_1rm_kg": 124.7
         },
@@ -1032,6 +1125,7 @@
           "date": "2026-06-22",
           "top_weight_kg": 115,
           "reps": 3,
+          "sets": 7,
           "avg_rpe": null,
           "est_1rm_kg": 126.5
         },
@@ -1039,6 +1133,7 @@
           "date": "2026-07-02",
           "top_weight_kg": 110,
           "reps": 4,
+          "sets": 7,
           "avg_rpe": null,
           "est_1rm_kg": 124.7
         },
@@ -1046,6 +1141,7 @@
           "date": "2026-07-12",
           "top_weight_kg": 100,
           "reps": 5,
+          "sets": 6,
           "avg_rpe": null,
           "est_1rm_kg": 116.7
         },
@@ -1053,6 +1149,7 @@
           "date": "2026-07-16",
           "top_weight_kg": 110,
           "reps": 4,
+          "sets": 7,
           "avg_rpe": null,
           "est_1rm_kg": 124.7
         },
@@ -1060,6 +1157,7 @@
           "date": "2026-07-27",
           "top_weight_kg": 110,
           "reps": 5,
+          "sets": 7,
           "avg_rpe": 9.5,
           "est_1rm_kg": 128.3
         },
@@ -1067,6 +1165,7 @@
           "date": "2026-07-31",
           "top_weight_kg": 110,
           "reps": 4,
+          "sets": 7,
           "avg_rpe": null,
           "est_1rm_kg": 124.7
         }
@@ -1076,6 +1175,7 @@
           "date": "2026-05-08",
           "top_weight_kg": 145.5,
           "reps": 6,
+          "sets": 4,
           "avg_rpe": 7.5,
           "est_1rm_kg": 174.6
         },
@@ -1083,6 +1183,7 @@
           "date": "2026-05-14",
           "top_weight_kg": 147.5,
           "reps": 8,
+          "sets": 4,
           "avg_rpe": 7.62,
           "est_1rm_kg": 186.8
         },
@@ -1090,6 +1191,7 @@
           "date": "2026-05-21",
           "top_weight_kg": 150.5,
           "reps": 8,
+          "sets": 4,
           "avg_rpe": 7.62,
           "est_1rm_kg": 190.6
         },
@@ -1097,6 +1199,7 @@
           "date": "2026-06-04",
           "top_weight_kg": 155.5,
           "reps": 5,
+          "sets": 4,
           "avg_rpe": 8.12,
           "est_1rm_kg": 181.4
         },
@@ -1104,6 +1207,7 @@
           "date": "2026-06-24",
           "top_weight_kg": 145.5,
           "reps": 8,
+          "sets": 4,
           "avg_rpe": null,
           "est_1rm_kg": 184.3
         }
@@ -1113,6 +1217,7 @@
           "date": "2026-05-08",
           "top_weight_kg": 90,
           "reps": 8,
+          "sets": 4,
           "avg_rpe": 7.25,
           "est_1rm_kg": 114.0
         },
@@ -1120,6 +1225,7 @@
           "date": "2026-05-14",
           "top_weight_kg": 90,
           "reps": 10,
+          "sets": 4,
           "avg_rpe": 7.5,
           "est_1rm_kg": 120.0
         },
@@ -1127,6 +1233,7 @@
           "date": "2026-05-21",
           "top_weight_kg": 100,
           "reps": 8,
+          "sets": 3,
           "avg_rpe": 8.5,
           "est_1rm_kg": 126.7
         },
@@ -1134,6 +1241,7 @@
           "date": "2026-06-04",
           "top_weight_kg": 100,
           "reps": 10,
+          "sets": 4,
           "avg_rpe": 8.25,
           "est_1rm_kg": 133.3
         },
@@ -1141,6 +1249,7 @@
           "date": "2026-06-14",
           "top_weight_kg": 100,
           "reps": 8,
+          "sets": 3,
           "avg_rpe": 7.75,
           "est_1rm_kg": 126.7
         },
@@ -1148,6 +1257,7 @@
           "date": "2026-06-24",
           "top_weight_kg": 100,
           "reps": 8,
+          "sets": 4,
           "avg_rpe": null,
           "est_1rm_kg": 126.7
         },
@@ -1155,6 +1265,7 @@
           "date": "2026-07-03",
           "top_weight_kg": 100,
           "reps": 8,
+          "sets": 3,
           "avg_rpe": null,
           "est_1rm_kg": 126.7
         },
@@ -1162,6 +1273,7 @@
           "date": "2026-07-14",
           "top_weight_kg": 100,
           "reps": 5,
+          "sets": 4,
           "avg_rpe": null,
           "est_1rm_kg": 116.7
         },
@@ -1169,6 +1281,7 @@
           "date": "2026-07-29",
           "top_weight_kg": 100,
           "reps": 6,
+          "sets": 3,
           "avg_rpe": null,
           "est_1rm_kg": 120.0
         }
@@ -1201,9 +1314,9 @@
       ]
     },
     "streak": {
-      "current_streak_weeks": 2,
+      "current_streak_weeks": 3,
       "sessions_per_good_week": 3,
-      "current_week_sessions": 6,
+      "current_week_sessions": 0,
       "weeks": [
         {
           "year": 2026,
