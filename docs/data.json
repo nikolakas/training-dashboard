@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-20T06:09:33Z",
-  "date": "2026-08-20",
+  "generated_at": "2026-08-21T15:15:39Z",
+  "date": "2026-08-21",
   "lookback_days": 28,
   "history_days": 90,
-  "sessions_analyzed": 16,
+  "sessions_analyzed": 15,
   "sections": {
     "suggestions": [
       {
@@ -1076,11 +1076,11 @@
       "flag": "You've trained 4 days in a row and recent average RPE is 8.1. Consider a rest day before your next session."
     },
     "stretches": [
-      "Wall bicep stretch (arm extended, palm on wall, rotate away)",
-      "Hanging lat stretch or child's pose reach, 2-3x30s"
+      "Hanging lat stretch or child's pose reach, 2-3x30s",
+      "Wall bicep stretch (arm extended, palm on wall, rotate away)"
     ],
     "volume": {
-      "other": 8,
+      "other": 7,
       "chest": 74,
       "shoulders": 28,
       "triceps": 15,
@@ -1091,14 +1091,6 @@
     },
     "compound_history": {
       "Bench Press (Barbell)": [
-        {
-          "date": "2026-05-22",
-          "top_weight_kg": 110,
-          "reps": 4,
-          "sets": 7,
-          "avg_rpe": 7.86,
-          "est_1rm_kg": 124.7
-        },
         {
           "date": "2026-05-31",
           "top_weight_kg": 110,
