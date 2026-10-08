@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-07T08:04:13Z",
-  "date": "2026-10-07",
+  "generated_at": "2026-10-08T10:09:08Z",
+  "date": "2026-10-08",
   "lookback_days": 28,
   "history_days": 90,
   "sessions_analyzed": 14,
@@ -87,9 +87,80 @@
         "delta_kg": 0,
         "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
         "detail": "Trending up (2026-09-28: 15kg x6 -> 2026-10-05: 15kg x8). No RPE logged - log RPE next time for a sharper suggestion."
+      },
+      {
+        "exercise": "Romanian Deadlift (Barbell)",
+        "category": "hamstrings",
+        "is_compound": true,
+        "zone": "compound target RPE 9-10",
+        "last_date": "2026-10-07",
+        "current_weight_kg": 100,
+        "current_reps": 8,
+        "current_sets": 3,
+        "current_rpe": null,
+        "increment_kg": 10,
+        "increment_source": "history",
+        "previous": {
+          "date": "2026-09-25",
+          "weight_kg": 100,
+          "reps": 6,
+          "sets": 2,
+          "rpe": null
+        },
+        "type": "note",
+        "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "100 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
+        "detail": "Trending up (2026-09-25: 100kg x6 -> 2026-10-07: 100kg x8). No RPE logged - log RPE next time for a sharper suggestion."
       }
     ],
     "recent_sessions": [
+      {
+        "date": "2026-10-07",
+        "title": "LEGS Tennis focused",
+        "day_type": "Legs",
+        "exercise_count": 6,
+        "exercises": [
+          {
+            "title": "Box Jump",
+            "sets": 3,
+            "top_weight_kg": null,
+            "top_reps": null
+          },
+          {
+            "title": "Hack Squat (Machine)",
+            "sets": 3,
+            "top_weight_kg": 150.5,
+            "top_reps": 9
+          },
+          {
+            "title": "Bulgarian Split Squat (Dumbbell)",
+            "sets": 6,
+            "top_weight_kg": 6,
+            "top_reps": 8
+          },
+          {
+            "title": "Cossack Squat",
+            "sets": 4,
+            "top_weight_kg": 10,
+            "top_reps": 8
+          },
+          {
+            "title": "Romanian Deadlift (Barbell)",
+            "sets": 3,
+            "top_weight_kg": 100,
+            "top_reps": 8
+          },
+          {
+            "title": "Seated Leg Curl (Machine)",
+            "sets": 3,
+            "top_weight_kg": 55,
+            "top_reps": 8
+          }
+        ]
+      },
       {
         "date": "2026-10-06",
         "title": "PUSH CLAUDE",
@@ -314,20 +385,6 @@
       },
       {
         "date": "2026-09-25",
-        "title": "TENNIS",
-        "day_type": null,
-        "exercise_count": 1,
-        "exercises": [
-          {
-            "title": "Tennis",
-            "sets": 1,
-            "top_weight_kg": null,
-            "top_reps": null
-          }
-        ]
-      },
-      {
-        "date": "2026-09-24",
         "title": "TENNIS",
         "day_type": null,
         "exercise_count": 1,
@@ -813,7 +870,7 @@
       "Seated Leg Curl (Machine)": {
         "increment_kg": 2.0,
         "source": "category-default",
-        "changes_used": 0,
+        "changes_used": 1,
         "category_default_kg": 2.0
       },
       "Calf Press (Machine)": {
@@ -995,18 +1052,19 @@
       "flag": null
     },
     "stretches": [
-      "Doorway pec stretch, 3x30s per side",
-      "Overhead triceps stretch, 3x30s per side"
+      "Standing quad stretch, 3x30s per side",
+      "Wall bicep stretch (arm extended, palm on wall, rotate away)",
+      "Standing or seated forward fold, 3x30s"
     ],
     "volume": {
-      "chest": 66,
-      "back": 53,
-      "biceps": 43,
+      "biceps": 46,
       "triceps": 19,
+      "chest": 55,
       "shoulders": 10,
-      "other": 13,
-      "quads": 11,
-      "hamstrings": 2
+      "back": 49,
+      "other": 16,
+      "quads": 24,
+      "hamstrings": 5
     },
     "compound_history": {
       "Bench Press (Barbell)": [
@@ -1179,6 +1237,14 @@
           "sets": 2,
           "avg_rpe": null,
           "est_1rm_kg": 120.0
+        },
+        {
+          "date": "2026-10-07",
+          "top_weight_kg": 100,
+          "reps": 8,
+          "sets": 3,
+          "avg_rpe": null,
+          "est_1rm_kg": 126.7
         }
       ],
       "Hack Squat (Machine)": [
@@ -1189,6 +1255,14 @@
           "sets": 3,
           "avg_rpe": null,
           "est_1rm_kg": 180.6
+        },
+        {
+          "date": "2026-10-07",
+          "top_weight_kg": 150.5,
+          "reps": 9,
+          "sets": 3,
+          "avg_rpe": null,
+          "est_1rm_kg": 195.7
         }
       ]
     },
@@ -1237,7 +1311,7 @@
     "streak": {
       "current_streak_weeks": 2,
       "sessions_per_good_week": 3,
-      "current_week_sessions": 2,
+      "current_week_sessions": 3,
       "weeks": [
         {
           "year": 2026,
@@ -1308,8 +1382,8 @@
         {
           "year": 2026,
           "week": 41,
-          "sessions": 2,
-          "good": false
+          "sessions": 3,
+          "good": true
         }
       ]
     },
@@ -1337,9 +1411,9 @@
         "category": "quads",
         "is_compound": true,
         "weight_kg": 150.5,
-        "reps": 8,
-        "est_1rm_kg": 190.6,
-        "date": "2026-04-02"
+        "reps": 9,
+        "est_1rm_kg": 195.7,
+        "date": "2026-10-07"
       },
       {
         "exercise": "Calf Press (Macchina)",
@@ -2279,17 +2353,17 @@
       }
     ],
     "day_type": {
-      "inferred": "Push",
+      "inferred": "Legs",
       "soundtrack": {
-        "album": "Yeezus",
-        "artist": "Kanye West"
+        "album": "To Pimp a Butterfly",
+        "artist": "Kendrick Lamar"
       }
     },
     "volume_battle": {
       "by_day_type": {
-        "Push": 95,
-        "Pull": 96,
-        "Legs": 13
+        "Push": 84,
+        "Pull": 95,
+        "Legs": 29
       },
       "groups": {
         "Push": [
