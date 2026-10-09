@@ -1,66 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-08T10:09:08Z",
-  "date": "2026-10-08",
+  "generated_at": "2026-10-09T17:48:44Z",
+  "date": "2026-10-09",
   "lookback_days": 28,
   "history_days": 90,
-  "sessions_analyzed": 14,
+  "sessions_analyzed": 13,
   "sections": {
     "suggestions": [
-      {
-        "exercise": "Hammer Curl (Dumbbell)",
-        "category": "biceps",
-        "is_compound": false,
-        "zone": "accessory target RPE 7-9",
-        "last_date": "2026-09-30",
-        "current_weight_kg": 18,
-        "current_reps": 10,
-        "current_sets": 4,
-        "current_rpe": null,
-        "increment_kg": 1,
-        "increment_source": "history",
-        "previous": {
-          "date": "2026-09-10",
-          "weight_kg": 16,
-          "reps": 10,
-          "sets": 4,
-          "rpe": null
-        },
-        "type": "note",
-        "proposed_weight_kg": null,
-        "action": "Hold",
-        "target_text": "18 kg",
-        "delta_kg": 0,
-        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
-        "detail": "Trending up (2026-09-10: 16kg x10 -> 2026-09-30: 18kg x10). No RPE logged - log RPE next time for a sharper suggestion."
-      },
-      {
-        "exercise": "Overhead Triceps Extension (Cable)",
-        "category": "triceps",
-        "is_compound": false,
-        "zone": "accessory target RPE 7-9",
-        "last_date": "2026-09-30",
-        "current_weight_kg": 32.5,
-        "current_reps": 6,
-        "current_sets": 2,
-        "current_rpe": null,
-        "increment_kg": 5,
-        "increment_source": "history",
-        "previous": {
-          "date": "2026-09-10",
-          "weight_kg": 30,
-          "reps": 12,
-          "sets": 1,
-          "rpe": null
-        },
-        "type": "note",
-        "proposed_weight_kg": null,
-        "action": "Hold",
-        "target_text": "32.5 kg",
-        "delta_kg": 0,
-        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
-        "detail": "Trending up (2026-09-10: 30kg x12 -> 2026-09-30: 32.5kg x6). No RPE logged - log RPE next time for a sharper suggestion."
-      },
       {
         "exercise": "Pull Up (Weighted)",
         "category": "back",
@@ -1052,16 +998,16 @@
       "flag": null
     },
     "stretches": [
-      "Standing quad stretch, 3x30s per side",
+      "Standing or seated forward fold, 3x30s",
       "Wall bicep stretch (arm extended, palm on wall, rotate away)",
-      "Standing or seated forward fold, 3x30s"
+      "Standing quad stretch, 3x30s per side"
     ],
     "volume": {
-      "biceps": 46,
-      "triceps": 19,
       "chest": 55,
       "shoulders": 10,
+      "triceps": 13,
       "back": 49,
+      "biceps": 33,
       "other": 16,
       "quads": 24,
       "hamstrings": 5
@@ -2361,8 +2307,8 @@
     },
     "volume_battle": {
       "by_day_type": {
-        "Push": 84,
-        "Pull": 95,
+        "Push": 78,
+        "Pull": 82,
         "Legs": 29
       },
       "groups": {
