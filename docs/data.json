@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-14T10:08:27Z",
-  "date": "2026-10-14",
+  "generated_at": "2026-10-15T10:58:15Z",
+  "date": "2026-10-15",
   "lookback_days": 28,
   "history_days": 90,
-  "sessions_analyzed": 15,
+  "sessions_analyzed": 16,
   "sections": {
     "suggestions": [
       {
@@ -87,6 +87,33 @@
         "delta_kg": 0,
         "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
         "detail": "Trending up (2026-10-10: 30kg x10 -> 2026-10-13: 35kg x8). No RPE logged - log RPE next time for a sharper suggestion."
+      },
+      {
+        "exercise": "Bulgarian Split Squat (Dumbbell)",
+        "category": "quads",
+        "is_compound": false,
+        "zone": "accessory target RPE 7-9",
+        "last_date": "2026-10-14",
+        "current_weight_kg": 7,
+        "current_reps": 8,
+        "current_sets": 4,
+        "current_rpe": null,
+        "increment_kg": 5.0,
+        "increment_source": "category-default",
+        "previous": {
+          "date": "2026-10-07",
+          "weight_kg": 6,
+          "reps": 8,
+          "sets": 6,
+          "rpe": null
+        },
+        "type": "note",
+        "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "7 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
+        "detail": "Trending up (2026-10-07: 6kg x8 -> 2026-10-14: 7kg x8). No RPE logged - log RPE next time for a sharper suggestion."
       },
       {
         "exercise": "Romanian Deadlift (Barbell)",
@@ -198,6 +225,38 @@
       }
     ],
     "recent_sessions": [
+      {
+        "date": "2026-10-14",
+        "title": "LEGS CLAUDE",
+        "day_type": "Legs",
+        "exercise_count": 4,
+        "exercises": [
+          {
+            "title": "Box Jump",
+            "sets": 3,
+            "top_weight_kg": null,
+            "top_reps": null
+          },
+          {
+            "title": "Squat (Barbell)",
+            "sets": 4,
+            "top_weight_kg": 100,
+            "top_reps": 6
+          },
+          {
+            "title": "Bulgarian Split Squat (Dumbbell)",
+            "sets": 4,
+            "top_weight_kg": 7,
+            "top_reps": 8
+          },
+          {
+            "title": "Cossack Squat",
+            "sets": 4,
+            "top_weight_kg": 10,
+            "top_reps": 8
+          }
+        ]
+      },
       {
         "date": "2026-10-13",
         "title": "PUSH CLAUDE",
@@ -479,32 +538,6 @@
             "sets": 1,
             "top_weight_kg": 30,
             "top_reps": 10
-          }
-        ]
-      },
-      {
-        "date": "2026-09-29",
-        "title": "PUSH CLAUDE",
-        "day_type": "Push",
-        "exercise_count": 3,
-        "exercises": [
-          {
-            "title": "Bench Press (Barbell)",
-            "sets": 6,
-            "top_weight_kg": 125,
-            "top_reps": 1
-          },
-          {
-            "title": "Incline Bench Press (Dumbbell)",
-            "sets": 8,
-            "top_weight_kg": 50,
-            "top_reps": 5
-          },
-          {
-            "title": "Multi Flight Technogym",
-            "sets": 4,
-            "top_weight_kg": 30,
-            "top_reps": 12
           }
         ]
       }
@@ -1125,7 +1158,7 @@
       "Bulgarian Split Squat (Dumbbell)": {
         "increment_kg": 5.0,
         "source": "category-default",
-        "changes_used": 1,
+        "changes_used": 2,
         "category_default_kg": 5.0
       },
       "Cossack Squat": {
@@ -1163,8 +1196,7 @@
       "flag": "You've trained 5 days in a row and recent average RPE is unknown (no RPE logged). Consider a rest day before your next session."
     },
     "stretches": [
-      "Doorway pec stretch, 3x30s per side",
-      "Overhead triceps stretch, 3x30s per side"
+      "Standing quad stretch, 3x30s per side"
     ],
     "volume": {
       "back": 77,
@@ -1172,20 +1204,12 @@
       "chest": 73,
       "shoulders": 6,
       "triceps": 16,
-      "other": 18,
-      "quads": 24,
+      "other": 21,
+      "quads": 36,
       "hamstrings": 5
     },
     "compound_history": {
       "Bench Press (Barbell)": [
-        {
-          "date": "2026-07-16",
-          "top_weight_kg": 110,
-          "reps": 4,
-          "sets": 7,
-          "avg_rpe": null,
-          "est_1rm_kg": 124.7
-        },
         {
           "date": "2026-07-27",
           "top_weight_kg": 110,
@@ -1421,7 +1445,7 @@
     "streak": {
       "current_streak_weeks": 3,
       "sessions_per_good_week": 3,
-      "current_week_sessions": 2,
+      "current_week_sessions": 3,
       "weeks": [
         {
           "year": 2026,
@@ -1492,8 +1516,8 @@
         {
           "year": 2026,
           "week": 42,
-          "sessions": 2,
-          "good": false
+          "sessions": 3,
+          "good": true
         }
       ]
     },
@@ -2463,17 +2487,17 @@
       }
     ],
     "day_type": {
-      "inferred": "Push",
+      "inferred": "Legs",
       "soundtrack": {
-        "album": "Yeezus",
-        "artist": "Kanye West"
+        "album": "To Pimp a Butterfly",
+        "artist": "Kendrick Lamar"
       }
     },
     "volume_battle": {
       "by_day_type": {
         "Push": 95,
         "Pull": 114,
-        "Legs": 29
+        "Legs": 41
       },
       "groups": {
         "Push": [
