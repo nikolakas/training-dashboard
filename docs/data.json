@@ -1,120 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-04T09:24:04Z",
-  "date": "2026-11-04",
+  "generated_at": "2026-11-05T11:01:46Z",
+  "date": "2026-11-05",
   "lookback_days": 28,
   "history_days": 90,
-  "sessions_analyzed": 17,
+  "sessions_analyzed": 16,
   "sections": {
     "suggestions": [
-      {
-        "exercise": "Hack Squat (Machine)",
-        "category": "quads",
-        "is_compound": true,
-        "zone": "compound target RPE 9-10",
-        "last_date": "2026-10-29",
-        "current_weight_kg": 160.5,
-        "current_reps": 7,
-        "current_sets": 3,
-        "current_rpe": null,
-        "increment_kg": 5.0,
-        "increment_source": "history",
-        "previous": {
-          "date": "2026-10-23",
-          "weight_kg": 150.5,
-          "reps": 8,
-          "sets": 3,
-          "rpe": null
-        },
-        "type": "note",
-        "proposed_weight_kg": null,
-        "action": "Hold",
-        "target_text": "160.5 kg",
-        "delta_kg": 0,
-        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
-        "detail": "Trending up (2026-10-23: 150.5kg x8 -> 2026-10-29: 160.5kg x7). No RPE logged - log RPE next time for a sharper suggestion."
-      },
-      {
-        "exercise": "Bulgarian Split Squat (Dumbbell)",
-        "category": "quads",
-        "is_compound": false,
-        "zone": "accessory target RPE 7-9",
-        "last_date": "2026-10-29",
-        "current_weight_kg": 9,
-        "current_reps": 8,
-        "current_sets": 6,
-        "current_rpe": null,
-        "increment_kg": 1,
-        "increment_source": "history",
-        "previous": {
-          "date": "2026-10-23",
-          "weight_kg": 7,
-          "reps": 8,
-          "sets": 6,
-          "rpe": null
-        },
-        "type": "note",
-        "proposed_weight_kg": null,
-        "action": "Hold",
-        "target_text": "9 kg",
-        "delta_kg": 0,
-        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
-        "detail": "Trending up (2026-10-23: 7kg x8 -> 2026-10-29: 9kg x8). No RPE logged - log RPE next time for a sharper suggestion."
-      },
-      {
-        "exercise": "Cossack Squat",
-        "category": "quads",
-        "is_compound": false,
-        "zone": "accessory target RPE 7-9",
-        "last_date": "2026-10-29",
-        "current_weight_kg": 14,
-        "current_reps": 8,
-        "current_sets": 4,
-        "current_rpe": null,
-        "increment_kg": 5.0,
-        "increment_source": "category-default",
-        "previous": {
-          "date": "2026-10-23",
-          "weight_kg": 10,
-          "reps": 8,
-          "sets": 4,
-          "rpe": null
-        },
-        "type": "note",
-        "proposed_weight_kg": null,
-        "action": "Hold",
-        "target_text": "14 kg",
-        "delta_kg": 0,
-        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
-        "detail": "Trending up (2026-10-23: 10kg x8 -> 2026-10-29: 14kg x8). No RPE logged - log RPE next time for a sharper suggestion."
-      },
-      {
-        "exercise": "Romanian Deadlift (Barbell)",
-        "category": "hamstrings",
-        "is_compound": true,
-        "zone": "compound target RPE 9-10",
-        "last_date": "2026-10-29",
-        "current_weight_kg": 110,
-        "current_reps": 6,
-        "current_sets": 4,
-        "current_rpe": null,
-        "increment_kg": 10,
-        "increment_source": "history",
-        "previous": {
-          "date": "2026-10-23",
-          "weight_kg": 100,
-          "reps": 8,
-          "sets": 4,
-          "rpe": null
-        },
-        "type": "note",
-        "proposed_weight_kg": null,
-        "action": "Hold",
-        "target_text": "110 kg",
-        "delta_kg": 0,
-        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
-        "detail": "Trending up (2026-10-23: 100kg x8 -> 2026-10-29: 110kg x6). No RPE logged - log RPE next time for a sharper suggestion."
-      },
       {
         "exercise": "Bench Press (Barbell)",
         "category": "chest",
@@ -332,6 +224,60 @@
         "detail": "Trending up (2026-10-26: 20kg x8 -> 2026-11-03: 24kg x6). No RPE logged - log RPE next time for a sharper suggestion."
       },
       {
+        "exercise": "Bulgarian Split Squat (Dumbbell)",
+        "category": "quads",
+        "is_compound": false,
+        "zone": "accessory target RPE 7-9",
+        "last_date": "2026-10-29",
+        "current_weight_kg": 9,
+        "current_reps": 8,
+        "current_sets": 6,
+        "current_rpe": null,
+        "increment_kg": 1,
+        "increment_source": "history",
+        "previous": {
+          "date": "2026-10-23",
+          "weight_kg": 7,
+          "reps": 8,
+          "sets": 6,
+          "rpe": null
+        },
+        "type": "note",
+        "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "9 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
+        "detail": "Trending up (2026-10-23: 7kg x8 -> 2026-10-29: 9kg x8). No RPE logged - log RPE next time for a sharper suggestion."
+      },
+      {
+        "exercise": "Cossack Squat",
+        "category": "quads",
+        "is_compound": false,
+        "zone": "accessory target RPE 7-9",
+        "last_date": "2026-10-29",
+        "current_weight_kg": 14,
+        "current_reps": 8,
+        "current_sets": 4,
+        "current_rpe": null,
+        "increment_kg": 5.0,
+        "increment_source": "category-default",
+        "previous": {
+          "date": "2026-10-23",
+          "weight_kg": 10,
+          "reps": 8,
+          "sets": 4,
+          "rpe": null
+        },
+        "type": "note",
+        "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "14 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
+        "detail": "Trending up (2026-10-23: 10kg x8 -> 2026-10-29: 14kg x8). No RPE logged - log RPE next time for a sharper suggestion."
+      },
+      {
         "exercise": "Straight Arm Lat Pulldown (Cable)",
         "category": "back",
         "is_compound": false,
@@ -357,6 +303,60 @@
         "delta_kg": 0,
         "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
         "detail": "Trending up (2026-10-15: 35kg x11 -> 2026-10-27: 40kg x9). No RPE logged - log RPE next time for a sharper suggestion."
+      },
+      {
+        "exercise": "Hack Squat (Machine)",
+        "category": "quads",
+        "is_compound": true,
+        "zone": "compound target RPE 9-10",
+        "last_date": "2026-10-29",
+        "current_weight_kg": 160.5,
+        "current_reps": 7,
+        "current_sets": 3,
+        "current_rpe": null,
+        "increment_kg": 5.0,
+        "increment_source": "history",
+        "previous": {
+          "date": "2026-10-23",
+          "weight_kg": 150.5,
+          "reps": 8,
+          "sets": 3,
+          "rpe": null
+        },
+        "type": "note",
+        "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "160.5 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
+        "detail": "Trending up (2026-10-23: 150.5kg x8 -> 2026-10-29: 160.5kg x7). No RPE logged - log RPE next time for a sharper suggestion."
+      },
+      {
+        "exercise": "Romanian Deadlift (Barbell)",
+        "category": "hamstrings",
+        "is_compound": true,
+        "zone": "compound target RPE 9-10",
+        "last_date": "2026-10-29",
+        "current_weight_kg": 110,
+        "current_reps": 6,
+        "current_sets": 4,
+        "current_rpe": null,
+        "increment_kg": 10,
+        "increment_source": "history",
+        "previous": {
+          "date": "2026-10-23",
+          "weight_kg": 100,
+          "reps": 8,
+          "sets": 4,
+          "rpe": null
+        },
+        "type": "note",
+        "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "110 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
+        "detail": "Trending up (2026-10-23: 100kg x8 -> 2026-10-29: 110kg x6). No RPE logged - log RPE next time for a sharper suggestion."
       }
     ],
     "recent_sessions": [
@@ -1353,14 +1353,14 @@
       "Wall bicep stretch (arm extended, palm on wall, rotate away)"
     ],
     "volume": {
-      "other": 24,
-      "quads": 51,
-      "hamstrings": 11,
-      "biceps": 37,
       "chest": 114,
       "back": 101,
       "triceps": 17,
-      "shoulders": 10
+      "biceps": 34,
+      "other": 21,
+      "quads": 38,
+      "shoulders": 10,
+      "hamstrings": 8
     },
     "compound_history": {
       "Bench Press (Barbell)": [
@@ -2700,8 +2700,8 @@
     "volume_battle": {
       "by_day_type": {
         "Push": 141,
-        "Pull": 138,
-        "Legs": 62
+        "Pull": 135,
+        "Legs": 46
       },
       "groups": {
         "Push": [
