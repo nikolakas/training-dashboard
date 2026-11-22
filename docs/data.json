@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-21T11:20:31Z",
-  "date": "2026-11-21",
+  "generated_at": "2026-11-22T08:09:28Z",
+  "date": "2026-11-22",
   "lookback_days": 28,
   "history_days": 90,
-  "sessions_analyzed": 16,
+  "sessions_analyzed": 17,
   "sections": {
     "suggestions": [
       {
@@ -62,47 +62,20 @@
         "detail": "Trending up (2026-11-10: 60kg x10 -> 2026-11-13: 65kg x12). No RPE logged - log RPE next time for a sharper suggestion."
       },
       {
-        "exercise": "Romanian Deadlift (Barbell)",
-        "category": "hamstrings",
-        "is_compound": true,
-        "zone": "compound target RPE 9-10",
-        "last_date": "2026-11-12",
-        "current_weight_kg": 120,
-        "current_reps": 6,
-        "current_sets": 4,
-        "current_rpe": null,
-        "increment_kg": 10,
-        "increment_source": "history",
-        "previous": {
-          "date": "2026-11-05",
-          "weight_kg": 110,
-          "reps": 12,
-          "sets": 4,
-          "rpe": null
-        },
-        "type": "note",
-        "proposed_weight_kg": null,
-        "action": "Hold",
-        "target_text": "120 kg",
-        "delta_kg": 0,
-        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
-        "detail": "Trending up (2026-11-05: 110kg x12 -> 2026-11-12: 120kg x6). No RPE logged - log RPE next time for a sharper suggestion."
-      },
-      {
         "exercise": "Bulgarian Split Squat (Dumbbell)",
         "category": "quads",
         "is_compound": false,
         "zone": "accessory target RPE 7-9",
-        "last_date": "2026-11-12",
-        "current_weight_kg": 12,
+        "last_date": "2026-11-21",
+        "current_weight_kg": 14,
         "current_reps": 8,
-        "current_sets": 6,
+        "current_sets": 4,
         "current_rpe": null,
-        "increment_kg": 1,
+        "increment_kg": 2,
         "increment_source": "history",
         "previous": {
-          "date": "2026-11-05",
-          "weight_kg": 10,
+          "date": "2026-11-12",
+          "weight_kg": 12,
           "reps": 8,
           "sets": 6,
           "rpe": null
@@ -110,10 +83,10 @@
         "type": "note",
         "proposed_weight_kg": null,
         "action": "Hold",
-        "target_text": "12 kg",
+        "target_text": "14 kg",
         "delta_kg": 0,
         "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
-        "detail": "Trending up (2026-11-05: 10kg x8 -> 2026-11-12: 12kg x8). No RPE logged - log RPE next time for a sharper suggestion."
+        "detail": "Trending up (2026-11-12: 12kg x8 -> 2026-11-21: 14kg x8). No RPE logged - log RPE next time for a sharper suggestion."
       },
       {
         "exercise": "Bicep Curl (Cable)",
@@ -144,6 +117,44 @@
       }
     ],
     "recent_sessions": [
+      {
+        "date": "2026-11-21",
+        "title": "LEGS Tennis focused",
+        "day_type": "Legs",
+        "exercise_count": 5,
+        "exercises": [
+          {
+            "title": "Squat (Barbell)",
+            "sets": 4,
+            "top_weight_kg": 100,
+            "top_reps": 6
+          },
+          {
+            "title": "Hack Squat (Machine)",
+            "sets": 3,
+            "top_weight_kg": 115.5,
+            "top_reps": 8
+          },
+          {
+            "title": "Romanian Deadlift (Barbell)",
+            "sets": 4,
+            "top_weight_kg": 120,
+            "top_reps": 6
+          },
+          {
+            "title": "Bulgarian Split Squat (Dumbbell)",
+            "sets": 4,
+            "top_weight_kg": 14,
+            "top_reps": 8
+          },
+          {
+            "title": "Cossack Squat",
+            "sets": 4,
+            "top_weight_kg": 16,
+            "top_reps": 8
+          }
+        ]
+      },
       {
         "date": "2026-11-20",
         "title": "PUSH CLAUDE",
@@ -437,32 +448,6 @@
             "sets": 1,
             "top_weight_kg": null,
             "top_reps": null
-          }
-        ]
-      },
-      {
-        "date": "2026-11-06",
-        "title": "PUSH CLAUDE",
-        "day_type": "Push",
-        "exercise_count": 3,
-        "exercises": [
-          {
-            "title": "Bench Press (Barbell)",
-            "sets": 5,
-            "top_weight_kg": 120,
-            "top_reps": 4
-          },
-          {
-            "title": "Incline Bench Press (Dumbbell)",
-            "sets": 6,
-            "top_weight_kg": 52,
-            "top_reps": 6
-          },
-          {
-            "title": "Triceps Rope Pushdown",
-            "sets": 3,
-            "top_weight_kg": 35,
-            "top_reps": 10
           }
         ]
       }
@@ -879,7 +864,7 @@
       "Hack Squat (Machine)": {
         "increment_kg": 5.0,
         "source": "history",
-        "changes_used": 11,
+        "changes_used": 12,
         "category_default_kg": 5.0
       },
       "Deadlift (Smith Machine)": {
@@ -1081,9 +1066,9 @@
         "category_default_kg": 2.5
       },
       "Bulgarian Split Squat (Dumbbell)": {
-        "increment_kg": 1,
+        "increment_kg": 2,
         "source": "history",
-        "changes_used": 5,
+        "changes_used": 6,
         "category_default_kg": 5.0
       },
       "Cossack Squat": {
@@ -1145,8 +1130,8 @@
       "flag": null
     },
     "stretches": [
-      "Doorway pec stretch, 3x30s per side",
-      "Cross-body shoulder stretch + doorway anterior delt stretch"
+      "Standing quad stretch, 3x30s per side",
+      "Standing or seated forward fold, 3x30s"
     ],
     "volume": {
       "chest": 104,
@@ -1154,8 +1139,8 @@
       "biceps": 48,
       "back": 82,
       "triceps": 15,
-      "quads": 42,
-      "hamstrings": 12,
+      "quads": 57,
+      "hamstrings": 16,
       "shoulders": 14
     },
     "compound_history": {
@@ -1369,6 +1354,14 @@
           "sets": 4,
           "avg_rpe": null,
           "est_1rm_kg": 144.0
+        },
+        {
+          "date": "2026-11-21",
+          "top_weight_kg": 120,
+          "reps": 6,
+          "sets": 4,
+          "avg_rpe": null,
+          "est_1rm_kg": 144.0
         }
       ],
       "Hack Squat (Machine)": [
@@ -1419,6 +1412,14 @@
           "sets": 5,
           "avg_rpe": null,
           "est_1rm_kg": 197.0
+        },
+        {
+          "date": "2026-11-21",
+          "top_weight_kg": 115.5,
+          "reps": 8,
+          "sets": 3,
+          "avg_rpe": null,
+          "est_1rm_kg": 146.3
         }
       ]
     },
@@ -1467,7 +1468,7 @@
     "streak": {
       "current_streak_weeks": 8,
       "sessions_per_good_week": 3,
-      "current_week_sessions": 2,
+      "current_week_sessions": 3,
       "weeks": [
         {
           "year": 2026,
@@ -1538,8 +1539,8 @@
         {
           "year": 2026,
           "week": 47,
-          "sessions": 2,
-          "good": false
+          "sessions": 3,
+          "good": true
         }
       ]
     },
@@ -1671,6 +1672,15 @@
         "date": "2025-11-06"
       },
       {
+        "exercise": "Squat (Barbell)",
+        "category": "quads",
+        "is_compound": false,
+        "weight_kg": 100,
+        "reps": 8,
+        "est_1rm_kg": 126.7,
+        "date": "2026-11-21"
+      },
+      {
         "exercise": "Stacco da Terra Rumeno (Bilanciere)",
         "category": "other",
         "is_compound": false,
@@ -1678,15 +1688,6 @@
         "reps": 10,
         "est_1rm_kg": 120.0,
         "date": "2025-10-29"
-      },
-      {
-        "exercise": "Squat (Barbell)",
-        "category": "quads",
-        "is_compound": false,
-        "weight_kg": 100,
-        "reps": 6,
-        "est_1rm_kg": 120.0,
-        "date": "2026-01-03"
       },
       {
         "exercise": "Lat Pulldown (Cavo)",
@@ -2445,6 +2446,15 @@
         "date": "2026-08-18"
       },
       {
+        "exercise": "Bulgarian Split Squat (Dumbbell)",
+        "category": "quads",
+        "is_compound": false,
+        "weight_kg": 14,
+        "reps": 8,
+        "est_1rm_kg": 17.7,
+        "date": "2026-11-21"
+      },
+      {
         "exercise": "Decline Crunch (Weighted)",
         "category": "other",
         "is_compound": false,
@@ -2479,15 +2489,6 @@
         "reps": 20,
         "est_1rm_kg": 16.7,
         "date": "2026-11-08"
-      },
-      {
-        "exercise": "Bulgarian Split Squat (Dumbbell)",
-        "category": "quads",
-        "is_compound": false,
-        "weight_kg": 12,
-        "reps": 8,
-        "est_1rm_kg": 15.2,
-        "date": "2026-11-12"
       },
       {
         "exercise": "Back Extension (Weighted Hyperextension)",
@@ -2545,17 +2546,17 @@
       }
     ],
     "day_type": {
-      "inferred": "Push",
+      "inferred": "Legs",
       "soundtrack": {
-        "album": "Yeezus",
-        "artist": "Kanye West"
+        "album": "To Pimp a Butterfly",
+        "artist": "Kendrick Lamar"
       }
     },
     "volume_battle": {
       "by_day_type": {
         "Push": 133,
         "Pull": 130,
-        "Legs": 54
+        "Legs": 73
       },
       "groups": {
         "Push": [
