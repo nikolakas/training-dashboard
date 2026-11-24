@@ -1,56 +1,56 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-22T08:09:28Z",
-  "date": "2026-11-22",
+  "generated_at": "2026-11-24T07:55:16Z",
+  "date": "2026-11-24",
   "lookback_days": 28,
   "history_days": 90,
-  "sessions_analyzed": 17,
+  "sessions_analyzed": 18,
   "sections": {
     "suggestions": [
       {
-        "exercise": "Incline Bench Press (Dumbbell)",
-        "category": "chest",
+        "exercise": "Lat Pulldown (Cable)",
+        "category": "back",
         "is_compound": false,
         "zone": "accessory target RPE 7-9",
-        "last_date": "2026-11-20",
-        "current_weight_kg": 42,
-        "current_reps": 12,
-        "current_sets": 6,
+        "last_date": "2026-11-22",
+        "current_weight_kg": 85,
+        "current_reps": 8,
+        "current_sets": 5,
         "current_rpe": null,
-        "increment_kg": 3,
+        "increment_kg": 5,
         "increment_source": "history",
         "previous": {
-          "date": "2026-11-20",
-          "weight_kg": 32,
-          "reps": 8,
-          "sets": 4,
+          "date": "2026-11-19",
+          "weight_kg": 70,
+          "reps": 6,
+          "sets": 3,
           "rpe": null
         },
         "type": "note",
         "proposed_weight_kg": null,
         "action": "Hold",
-        "target_text": "42 kg",
+        "target_text": "85 kg",
         "delta_kg": 0,
         "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
-        "detail": "Trending up (2026-11-20: 32kg x8 -> 2026-11-20: 42kg x12). No RPE logged - log RPE next time for a sharper suggestion."
+        "detail": "Trending up (2026-11-19: 70kg x6 -> 2026-11-22: 85kg x8). No RPE logged - log RPE next time for a sharper suggestion."
       },
       {
-        "exercise": "Butterfly (Pec Deck)",
-        "category": "chest",
+        "exercise": "Seated Cable Row - V Grip (Cable)",
+        "category": "back",
         "is_compound": false,
         "zone": "accessory target RPE 7-9",
-        "last_date": "2026-11-13",
+        "last_date": "2026-11-22",
         "current_weight_kg": 65,
-        "current_reps": 12,
-        "current_sets": 3,
+        "current_reps": 6,
+        "current_sets": 4,
         "current_rpe": null,
         "increment_kg": 5,
         "increment_source": "history",
         "previous": {
-          "date": "2026-11-10",
-          "weight_kg": 60,
-          "reps": 10,
-          "sets": 2,
+          "date": "2026-11-13",
+          "weight_kg": 55,
+          "reps": 8,
+          "sets": 4,
           "rpe": null
         },
         "type": "note",
@@ -59,7 +59,61 @@
         "target_text": "65 kg",
         "delta_kg": 0,
         "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
-        "detail": "Trending up (2026-11-10: 60kg x10 -> 2026-11-13: 65kg x12). No RPE logged - log RPE next time for a sharper suggestion."
+        "detail": "Trending up (2026-11-13: 55kg x8 -> 2026-11-22: 65kg x6). No RPE logged - log RPE next time for a sharper suggestion."
+      },
+      {
+        "exercise": "Iso-Lateral Row (Machine)",
+        "category": "back",
+        "is_compound": false,
+        "zone": "accessory target RPE 7-9",
+        "last_date": "2026-11-22",
+        "current_weight_kg": 50,
+        "current_reps": 10,
+        "current_sets": 6,
+        "current_rpe": null,
+        "increment_kg": 5,
+        "increment_source": "history",
+        "previous": {
+          "date": "2026-11-19",
+          "weight_kg": 45,
+          "reps": 10,
+          "sets": 8,
+          "rpe": null
+        },
+        "type": "note",
+        "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "50 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
+        "detail": "Trending up (2026-11-19: 45kg x10 -> 2026-11-22: 50kg x10). No RPE logged - log RPE next time for a sharper suggestion."
+      },
+      {
+        "exercise": "Triceps Rope Pushdown",
+        "category": "triceps",
+        "is_compound": false,
+        "zone": "accessory target RPE 7-9",
+        "last_date": "2026-11-23",
+        "current_weight_kg": 42.5,
+        "current_reps": 6,
+        "current_sets": 3,
+        "current_rpe": null,
+        "increment_kg": 5,
+        "increment_source": "history",
+        "previous": {
+          "date": "2026-11-10",
+          "weight_kg": 35,
+          "reps": 10,
+          "sets": 3,
+          "rpe": null
+        },
+        "type": "note",
+        "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "42.5 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
+        "detail": "Trending up (2026-11-10: 35kg x10 -> 2026-11-23: 42.5kg x6). No RPE logged - log RPE next time for a sharper suggestion."
       },
       {
         "exercise": "Bulgarian Split Squat (Dumbbell)",
@@ -89,34 +143,236 @@
         "detail": "Trending up (2026-11-12: 12kg x8 -> 2026-11-21: 14kg x8). No RPE logged - log RPE next time for a sharper suggestion."
       },
       {
-        "exercise": "Bicep Curl (Cable)",
-        "category": "biceps",
-        "is_compound": false,
-        "zone": "accessory target RPE 7-9",
-        "last_date": "2026-11-09",
-        "current_weight_kg": 25,
-        "current_reps": 10,
-        "current_sets": 2,
+        "exercise": "Bench Press (Barbell)",
+        "category": "chest",
+        "is_compound": true,
+        "zone": "compound target RPE 9-10",
+        "last_date": "2026-11-23",
+        "current_weight_kg": 120,
+        "current_reps": 3,
+        "current_sets": 5,
         "current_rpe": null,
-        "increment_kg": 1,
+        "increment_kg": 5,
         "increment_source": "history",
         "previous": {
-          "date": "2026-10-31",
-          "weight_kg": 25,
+          "date": "2026-11-20",
+          "weight_kg": 115,
+          "reps": 5,
+          "sets": 6,
+          "rpe": null
+        },
+        "type": "note",
+        "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "120 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
+        "detail": "Trending up (2026-11-20: 115kg x5 -> 2026-11-23: 120kg x3). No RPE logged - log RPE next time for a sharper suggestion."
+      },
+      {
+        "exercise": "Butterfly (Pec Deck)",
+        "category": "chest",
+        "is_compound": false,
+        "zone": "accessory target RPE 7-9",
+        "last_date": "2026-11-23",
+        "current_weight_kg": 90,
+        "current_reps": 3,
+        "current_sets": 4,
+        "current_rpe": null,
+        "increment_kg": 5,
+        "increment_source": "history",
+        "previous": {
+          "date": "2026-11-13",
+          "weight_kg": 65,
+          "reps": 12,
+          "sets": 3,
+          "rpe": null
+        },
+        "type": "note",
+        "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "90 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
+        "detail": "Trending up (2026-11-13: 65kg x12 -> 2026-11-23: 90kg x3). No RPE logged - log RPE next time for a sharper suggestion."
+      },
+      {
+        "exercise": "Triceps Pressdown",
+        "category": "triceps",
+        "is_compound": false,
+        "zone": "accessory target RPE 7-9",
+        "last_date": "2026-11-23",
+        "current_weight_kg": 42.5,
+        "current_reps": 8,
+        "current_sets": 3,
+        "current_rpe": null,
+        "increment_kg": 2.5,
+        "increment_source": "history",
+        "previous": {
+          "date": "2026-10-30",
+          "weight_kg": 40,
           "reps": 8,
+          "sets": 3,
+          "rpe": null
+        },
+        "type": "note",
+        "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "42.5 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
+        "detail": "Trending up (2026-10-30: 40kg x8 -> 2026-11-23: 42.5kg x8). No RPE logged - log RPE next time for a sharper suggestion."
+      },
+      {
+        "exercise": "Multi Flight Technogym",
+        "category": "other",
+        "is_compound": false,
+        "zone": "accessory target RPE 7-9",
+        "last_date": "2026-11-23",
+        "current_weight_kg": 35,
+        "current_reps": 15,
+        "current_sets": 3,
+        "current_rpe": null,
+        "increment_kg": 2.5,
+        "increment_source": "category-default",
+        "previous": {
+          "date": "2026-10-30",
+          "weight_kg": 35,
+          "reps": 12,
           "sets": 2,
           "rpe": null
         },
         "type": "note",
         "proposed_weight_kg": null,
         "action": "Hold",
-        "target_text": "25 kg",
+        "target_text": "35 kg",
         "delta_kg": 0,
         "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
-        "detail": "Trending up (2026-10-31: 25kg x8 -> 2026-11-09: 25kg x10). No RPE logged - log RPE next time for a sharper suggestion."
+        "detail": "Trending up (2026-10-30: 35kg x12 -> 2026-11-23: 35kg x15). No RPE logged - log RPE next time for a sharper suggestion."
+      },
+      {
+        "exercise": "Preacher Curl (Barbell)",
+        "category": "biceps",
+        "is_compound": false,
+        "zone": "accessory target RPE 7-9",
+        "last_date": "2026-11-22",
+        "current_weight_kg": 40,
+        "current_reps": 8,
+        "current_sets": 3,
+        "current_rpe": null,
+        "increment_kg": 2.0,
+        "increment_source": "category-default",
+        "previous": {
+          "date": "2026-11-09",
+          "weight_kg": 35,
+          "reps": 5,
+          "sets": 2,
+          "rpe": null
+        },
+        "type": "note",
+        "proposed_weight_kg": null,
+        "action": "Hold",
+        "target_text": "40 kg",
+        "delta_kg": 0,
+        "why": "Trending up, but no RPE logged - log RPE for a sharper call.",
+        "detail": "Trending up (2026-11-09: 35kg x5 -> 2026-11-22: 40kg x8). No RPE logged - log RPE next time for a sharper suggestion."
       }
     ],
     "recent_sessions": [
+      {
+        "date": "2026-11-23",
+        "title": "PUSH CLAUDE",
+        "day_type": "Push",
+        "exercise_count": 6,
+        "exercises": [
+          {
+            "title": "Incline Bench Press (Dumbbell)",
+            "sets": 8,
+            "top_weight_kg": 42,
+            "top_reps": 8
+          },
+          {
+            "title": "Bench Press (Barbell)",
+            "sets": 5,
+            "top_weight_kg": 120,
+            "top_reps": 3
+          },
+          {
+            "title": "Butterfly (Pec Deck)",
+            "sets": 4,
+            "top_weight_kg": 90,
+            "top_reps": 3
+          },
+          {
+            "title": "Multi Flight Technogym",
+            "sets": 3,
+            "top_weight_kg": 35,
+            "top_reps": 15
+          },
+          {
+            "title": "Triceps Pressdown",
+            "sets": 3,
+            "top_weight_kg": 42.5,
+            "top_reps": 8
+          },
+          {
+            "title": "Triceps Rope Pushdown",
+            "sets": 3,
+            "top_weight_kg": 42.5,
+            "top_reps": 6
+          }
+        ]
+      },
+      {
+        "date": "2026-11-22",
+        "title": "PULL CLAUDE",
+        "day_type": "Pull",
+        "exercise_count": 7,
+        "exercises": [
+          {
+            "title": "Seated Cable Row - V Grip (Cable)",
+            "sets": 4,
+            "top_weight_kg": 65,
+            "top_reps": 6
+          },
+          {
+            "title": "Lat Pulldown (Cable)",
+            "sets": 5,
+            "top_weight_kg": 85,
+            "top_reps": 8
+          },
+          {
+            "title": "Iso-Lateral Row (Machine)",
+            "sets": 6,
+            "top_weight_kg": 50,
+            "top_reps": 10
+          },
+          {
+            "title": "Rear Delt Reverse Fly (Machine)",
+            "sets": 4,
+            "top_weight_kg": 20,
+            "top_reps": 10
+          },
+          {
+            "title": "Preacher Curl (Barbell)",
+            "sets": 3,
+            "top_weight_kg": 40,
+            "top_reps": 8
+          },
+          {
+            "title": "Bicep Curl (Cable)",
+            "sets": 2,
+            "top_weight_kg": 25,
+            "top_reps": 10
+          },
+          {
+            "title": "Reverse Curl (Cable)",
+            "sets": 1,
+            "top_weight_kg": 25,
+            "top_reps": 8
+          }
+        ]
+      },
       {
         "date": "2026-11-21",
         "title": "LEGS Tennis focused",
@@ -338,118 +594,6 @@
             "top_reps": 15
           }
         ]
-      },
-      {
-        "date": "2026-11-09",
-        "title": "PULL CLAUDE",
-        "day_type": "Pull",
-        "exercise_count": 10,
-        "exercises": [
-          {
-            "title": "Lat Pulldown (Cable)",
-            "sets": 6,
-            "top_weight_kg": 85,
-            "top_reps": 6
-          },
-          {
-            "title": "Pull Up",
-            "sets": 2,
-            "top_weight_kg": null,
-            "top_reps": null
-          },
-          {
-            "title": "Straight Arm Lat Pulldown (Cable)",
-            "sets": 2,
-            "top_weight_kg": 35,
-            "top_reps": 10
-          },
-          {
-            "title": "Seated Cable Row - V Grip (Cable)",
-            "sets": 3,
-            "top_weight_kg": 55,
-            "top_reps": 8
-          },
-          {
-            "title": "Landmine Row",
-            "sets": 5,
-            "top_weight_kg": 45,
-            "top_reps": 8
-          },
-          {
-            "title": "Rear Delt Reverse Fly (Machine)",
-            "sets": 4,
-            "top_weight_kg": 20,
-            "top_reps": 12
-          },
-          {
-            "title": "Seated Incline Curl (Dumbbell)",
-            "sets": 6,
-            "top_weight_kg": 20,
-            "top_reps": 8
-          },
-          {
-            "title": "Preacher Curl (Barbell)",
-            "sets": 2,
-            "top_weight_kg": 35,
-            "top_reps": 5
-          },
-          {
-            "title": "Bicep Curl (Cable)",
-            "sets": 2,
-            "top_weight_kg": 25,
-            "top_reps": 10
-          },
-          {
-            "title": "Hammer Curl (Dumbbell)",
-            "sets": 4,
-            "top_weight_kg": 18,
-            "top_reps": 8
-          }
-        ]
-      },
-      {
-        "date": "2026-11-08",
-        "title": "We vaporise the alcohol we had in the last days - routine",
-        "day_type": "Pull",
-        "exercise_count": 6,
-        "exercises": [
-          {
-            "title": "Treadmill",
-            "sets": 1,
-            "top_weight_kg": null,
-            "top_reps": null
-          },
-          {
-            "title": "Seated Incline Curl (Dumbbell)",
-            "sets": 6,
-            "top_weight_kg": 22,
-            "top_reps": 8
-          },
-          {
-            "title": "Decline Crunch",
-            "sets": 1,
-            "top_weight_kg": null,
-            "top_reps": null
-          },
-          {
-            "title": "Decline Crunch (Weighted)",
-            "sets": 2,
-            "top_weight_kg": 10,
-            "top_reps": 15
-          },
-          {
-            "title": "Russian Twist (Weighted)",
-            "sets": 1,
-            "top_weight_kg": 10,
-            "top_reps": 20
-          },
-          {
-            "title": "Hanging Leg Raise",
-            "sets": 1,
-            "top_weight_kg": null,
-            "top_reps": null
-          }
-        ]
       }
     ],
     "increments": {
@@ -462,7 +606,7 @@
       "Iso-Lateral Row (Machine)": {
         "increment_kg": 5,
         "source": "history",
-        "changes_used": 26,
+        "changes_used": 27,
         "category_default_kg": 2.5
       },
       "Reverse Fly Single Arm (Cable)": {
@@ -474,7 +618,7 @@
       "Seated Cable Row - V Grip (Cable)": {
         "increment_kg": 5,
         "source": "history",
-        "changes_used": 17,
+        "changes_used": 18,
         "category_default_kg": 2.5
       },
       "Seated Incline Curl (Dumbbell)": {
@@ -516,7 +660,7 @@
       "Bench Press (Barbell)": {
         "increment_kg": 5,
         "source": "history",
-        "changes_used": 33,
+        "changes_used": 34,
         "category_default_kg": 2.5
       },
       "Pull Up": {
@@ -558,7 +702,7 @@
       "Triceps Rope Pushdown": {
         "increment_kg": 5,
         "source": "history",
-        "changes_used": 19,
+        "changes_used": 20,
         "category_default_kg": 2.0
       },
       "Overhead Triceps Extension (Cable)": {
@@ -960,7 +1104,7 @@
       "Preacher Curl (Barbell)": {
         "increment_kg": 2.0,
         "source": "category-default",
-        "changes_used": 1,
+        "changes_used": 2,
         "category_default_kg": 2.0
       },
       "Reverse Curl (Barbell)": {
@@ -1127,32 +1271,98 @@
       }
     },
     "rest": {
-      "flag": null
+      "flag": "You've trained 5 days in a row and recent average RPE is unknown (no RPE logged). Consider a rest day before your next session."
     },
     "stretches": [
-      "Standing quad stretch, 3x30s per side",
-      "Standing or seated forward fold, 3x30s"
+      "Doorway pec stretch, 3x30s per side",
+      "Overhead triceps stretch, 3x30s per side"
     ],
     "volume": {
-      "chest": 104,
+      "back": 97,
+      "triceps": 21,
       "other": 18,
-      "biceps": 48,
-      "back": 82,
-      "triceps": 15,
       "quads": 57,
       "hamstrings": 16,
+      "chest": 109,
+      "biceps": 50,
       "shoulders": 14
     },
     "compound_history": {
-      "Bench Press (Barbell)": [
+      "Romanian Deadlift (Barbell)": [
         {
-          "date": "2026-08-24",
-          "top_weight_kg": 115,
-          "reps": 5,
-          "sets": 6,
+          "date": "2026-08-28",
+          "top_weight_kg": 100,
+          "reps": 8,
+          "sets": 4,
           "avg_rpe": null,
-          "est_1rm_kg": 134.2
+          "est_1rm_kg": 126.7
         },
+        {
+          "date": "2026-09-07",
+          "top_weight_kg": 100,
+          "reps": 8,
+          "sets": 2,
+          "avg_rpe": null,
+          "est_1rm_kg": 126.7
+        },
+        {
+          "date": "2026-09-25",
+          "top_weight_kg": 100,
+          "reps": 6,
+          "sets": 2,
+          "avg_rpe": null,
+          "est_1rm_kg": 120.0
+        },
+        {
+          "date": "2026-10-07",
+          "top_weight_kg": 100,
+          "reps": 8,
+          "sets": 3,
+          "avg_rpe": null,
+          "est_1rm_kg": 126.7
+        },
+        {
+          "date": "2026-10-23",
+          "top_weight_kg": 100,
+          "reps": 8,
+          "sets": 4,
+          "avg_rpe": null,
+          "est_1rm_kg": 126.7
+        },
+        {
+          "date": "2026-10-29",
+          "top_weight_kg": 110,
+          "reps": 6,
+          "sets": 4,
+          "avg_rpe": null,
+          "est_1rm_kg": 132.0
+        },
+        {
+          "date": "2026-11-05",
+          "top_weight_kg": 110,
+          "reps": 12,
+          "sets": 4,
+          "avg_rpe": null,
+          "est_1rm_kg": 154.0
+        },
+        {
+          "date": "2026-11-12",
+          "top_weight_kg": 120,
+          "reps": 6,
+          "sets": 4,
+          "avg_rpe": null,
+          "est_1rm_kg": 144.0
+        },
+        {
+          "date": "2026-11-21",
+          "top_weight_kg": 120,
+          "reps": 6,
+          "sets": 4,
+          "avg_rpe": null,
+          "est_1rm_kg": 144.0
+        }
+      ],
+      "Bench Press (Barbell)": [
         {
           "date": "2026-09-01",
           "top_weight_kg": 115,
@@ -1288,80 +1498,14 @@
           "sets": 6,
           "avg_rpe": null,
           "est_1rm_kg": 134.2
-        }
-      ],
-      "Romanian Deadlift (Barbell)": [
-        {
-          "date": "2026-08-28",
-          "top_weight_kg": 100,
-          "reps": 8,
-          "sets": 4,
-          "avg_rpe": null,
-          "est_1rm_kg": 126.7
         },
         {
-          "date": "2026-09-07",
-          "top_weight_kg": 100,
-          "reps": 8,
-          "sets": 2,
-          "avg_rpe": null,
-          "est_1rm_kg": 126.7
-        },
-        {
-          "date": "2026-09-25",
-          "top_weight_kg": 100,
-          "reps": 6,
-          "sets": 2,
-          "avg_rpe": null,
-          "est_1rm_kg": 120.0
-        },
-        {
-          "date": "2026-10-07",
-          "top_weight_kg": 100,
-          "reps": 8,
-          "sets": 3,
-          "avg_rpe": null,
-          "est_1rm_kg": 126.7
-        },
-        {
-          "date": "2026-10-23",
-          "top_weight_kg": 100,
-          "reps": 8,
-          "sets": 4,
-          "avg_rpe": null,
-          "est_1rm_kg": 126.7
-        },
-        {
-          "date": "2026-10-29",
-          "top_weight_kg": 110,
-          "reps": 6,
-          "sets": 4,
+          "date": "2026-11-23",
+          "top_weight_kg": 120,
+          "reps": 3,
+          "sets": 5,
           "avg_rpe": null,
           "est_1rm_kg": 132.0
-        },
-        {
-          "date": "2026-11-05",
-          "top_weight_kg": 110,
-          "reps": 12,
-          "sets": 4,
-          "avg_rpe": null,
-          "est_1rm_kg": 154.0
-        },
-        {
-          "date": "2026-11-12",
-          "top_weight_kg": 120,
-          "reps": 6,
-          "sets": 4,
-          "avg_rpe": null,
-          "est_1rm_kg": 144.0
-        },
-        {
-          "date": "2026-11-21",
-          "top_weight_kg": 120,
-          "reps": 6,
-          "sets": 4,
-          "avg_rpe": null,
-          "est_1rm_kg": 144.0
         }
       ],
       "Hack Squat (Machine)": [
@@ -1466,16 +1610,10 @@
       ]
     },
     "streak": {
-      "current_streak_weeks": 8,
+      "current_streak_weeks": 9,
       "sessions_per_good_week": 3,
-      "current_week_sessions": 3,
+      "current_week_sessions": 1,
       "weeks": [
-        {
-          "year": 2026,
-          "week": 36,
-          "sessions": 5,
-          "good": true
-        },
         {
           "year": 2026,
           "week": 37,
@@ -1539,8 +1677,14 @@
         {
           "year": 2026,
           "week": 47,
-          "sessions": 3,
+          "sessions": 4,
           "good": true
+        },
+        {
+          "year": 2026,
+          "week": 48,
+          "sessions": 1,
+          "good": false
         }
       ]
     },
@@ -2032,6 +2176,24 @@
         "date": "2026-06-22"
       },
       {
+        "exercise": "Multi Flight Technogym",
+        "category": "other",
+        "is_compound": false,
+        "weight_kg": 35,
+        "reps": 15,
+        "est_1rm_kg": 52.5,
+        "date": "2026-11-23"
+      },
+      {
+        "exercise": "Triceps Rope Pushdown",
+        "category": "triceps",
+        "is_compound": false,
+        "weight_kg": 42.5,
+        "reps": 6,
+        "est_1rm_kg": 51.0,
+        "date": "2026-11-23"
+      },
+      {
         "exercise": "Leg Extensions Gamba Singola",
         "category": "quads",
         "is_compound": false,
@@ -2086,15 +2248,6 @@
         "date": "2025-11-03"
       },
       {
-        "exercise": "Multi Flight Technogym",
-        "category": "other",
-        "is_compound": false,
-        "weight_kg": 35,
-        "reps": 12,
-        "est_1rm_kg": 49.0,
-        "date": "2026-10-19"
-      },
-      {
         "exercise": "Leg Curl in Piedi",
         "category": "biceps",
         "is_compound": false,
@@ -2102,15 +2255,6 @@
         "reps": 6,
         "est_1rm_kg": 48.0,
         "date": "2025-11-06"
-      },
-      {
-        "exercise": "Triceps Rope Pushdown",
-        "category": "triceps",
-        "is_compound": false,
-        "weight_kg": 35,
-        "reps": 10,
-        "est_1rm_kg": 46.7,
-        "date": "2026-11-06"
       },
       {
         "exercise": "Leg Press (Macchina)",
@@ -2546,16 +2690,16 @@
       }
     ],
     "day_type": {
-      "inferred": "Legs",
+      "inferred": "Push",
       "soundtrack": {
-        "album": "To Pimp a Butterfly",
-        "artist": "Kendrick Lamar"
+        "album": "Yeezus",
+        "artist": "Kanye West"
       }
     },
     "volume_battle": {
       "by_day_type": {
-        "Push": 133,
-        "Pull": 130,
+        "Push": 144,
+        "Pull": 147,
         "Legs": 73
       },
       "groups": {
